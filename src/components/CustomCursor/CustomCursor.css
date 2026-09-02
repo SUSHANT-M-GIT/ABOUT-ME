@@ -1,0 +1,93 @@
+.cursor-system {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-cursor);
+  pointer-events: none;
+}
+
+/* Main orb */
+.cursor-orb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #fff 0%, var(--accent) 60%, transparent 100%);
+  border-radius: 50%;
+  box-shadow:
+    0 0 6px var(--accent),
+    0 0 12px rgba(108,99,255,0.4);
+  transition: width 0.2s var(--ease-spring),
+              height 0.2s var(--ease-spring),
+              background 0.2s ease,
+              box-shadow 0.2s ease;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Trailing ring */
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(108,99,255,0.5);
+  border-radius: 50%;
+  transition:
+    width 0.3s var(--ease-spring),
+    height 0.3s var(--ease-spring),
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Link state */
+.cursor-orb.cursor-link {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-2);
+  box-shadow: 0 0 10px var(--accent-2), 0 0 20px rgba(0,217,255,0.3);
+}
+.cursor-ring.cursor-ring-link {
+  width: 52px;
+  height: 52px;
+  border-color: var(--accent-2);
+  border-width: 2px;
+}
+
+/* Magnetic / project card state */
+.cursor-orb.cursor-magnetic {
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #fff 0%, var(--accent-3) 60%);
+  box-shadow: 0 0 12px var(--accent-3), 0 0 24px rgba(255,107,107,0.3);
+}
+.cursor-ring.cursor-ring-magnetic {
+  width: 60px;
+  height: 60px;
+  border-color: var(--accent-3);
+}
+
+/* Character hover */
+.cursor-orb.cursor-character {
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #fff 0%, var(--accent) 50%, var(--accent-2) 100%);
+  box-shadow:
+    0 0 10px var(--accent),
+    0 0 20px rgba(0,217,255,0.2);
+}
+.cursor-ring.cursor-ring-character {
+  width: 70px;
+  height: 70px;
+  border-color: rgba(108,99,255,0.3);
+  border-width: 1px;
+}
+
+/* Hide on touch */
+@media (hover: none) {
+  .cursor-system { display: none; }
+}

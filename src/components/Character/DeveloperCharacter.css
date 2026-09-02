@@ -1,0 +1,115 @@
+.dev-character {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease;
+}
+
+.dev-char-svg {
+  width: clamp(180px, 30vw, 380px);
+  height: auto;
+  filter:
+    drop-shadow(0 20px 60px rgba(108,99,255,0.3))
+    drop-shadow(0 0 80px rgba(0,217,255,0.1));
+  transition: filter 0.3s ease;
+}
+
+.dev-char-svg:hover {
+  filter:
+    drop-shadow(0 20px 80px rgba(108,99,255,0.5))
+    drop-shadow(0 0 100px rgba(0,217,255,0.2));
+}
+
+/* Breathing animation */
+.char-body-group {
+  transition: transform 2s ease-in-out;
+}
+
+.breathing .char-body-group {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scaleY(1) translateY(0); }
+  50% { transform: scaleY(1.008) translateY(-2px); }
+}
+
+.char-head-group {
+  transition: transform 0.15s ease;
+}
+
+/* Screen cursor blink */
+.screen-cursor {
+  animation: cursorBlink 1.2s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0; }
+}
+
+/* Skill orbit icons */
+.skill-orbit-icon {
+  animation: orbitIn 0.4s var(--orbit-delay, 0s) var(--ease-spring) both;
+  fill: var(--text-primary);
+}
+
+@keyframes orbitIn {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Skill badges */
+.char-skill-badges {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.char-skill-badge {
+  position: absolute;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 100px;
+  background: rgba(108,99,255,0.15);
+  border: 1px solid rgba(108,99,255,0.3);
+  color: var(--accent);
+  animation: badgeFloat 0.5s calc(var(--i) * 0.1s) var(--ease-spring) both;
+}
+
+.char-skill-badge:nth-child(1) { top: 15%; left: -30%; }
+.char-skill-badge:nth-child(2) { top: 35%; right: -30%; }
+.char-skill-badge:nth-child(3) { top: 60%; left: -35%; }
+.char-skill-badge:nth-child(4) { top: 75%; right: -35%; }
+
+@keyframes badgeFloat {
+  from { opacity: 0; transform: scale(0.5) translateX(20px); }
+  to { opacity: 1; transform: scale(1) translateX(0); }
+}
+
+/* Hologram */
+.char-hologram {
+  position: absolute;
+  left: -80px;
+  top: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hologram-line {
+  height: 2px;
+  width: var(--w, 80%);
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 1px;
+  animation: holoLine 0.4s var(--delay, 0s) var(--ease-out) both;
+  opacity: 0.7;
+}
+
+@keyframes holoLine {
+  from { width: 0; opacity: 0; }
+  to { opacity: 0.7; }
+}

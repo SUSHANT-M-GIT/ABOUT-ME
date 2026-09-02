@@ -1,0 +1,244 @@
+.about {
+  padding: var(--section-padding) 2rem;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(180deg, transparent, var(--accent));
+  opacity: 0.4;
+}
+
+.about-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+/* Character panel */
+.about-character-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: sticky;
+  top: 100px;
+}
+
+.about-char-frame {
+  position: relative;
+  padding: 2rem;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-char-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(108,99,255,0.08) 0%, transparent 60%);
+}
+
+.about-char-svg {
+  width: 200px;
+  height: auto;
+  filter: drop-shadow(0 10px 40px rgba(108,99,255,0.3));
+  animation: aboutCharFloat 4s ease-in-out infinite;
+}
+
+@keyframes aboutCharFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Corner accents */
+.frame-corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: var(--accent);
+  border-style: solid;
+}
+.frame-corner-tl { top: 12px; left: 12px; border-width: 1.5px 0 0 1.5px; border-radius: 2px 0 0 0; }
+.frame-corner-tr { top: 12px; right: 12px; border-width: 1.5px 1.5px 0 0; border-radius: 0 2px 0 0; }
+.frame-corner-bl { bottom: 12px; left: 12px; border-width: 0 0 1.5px 1.5px; border-radius: 0 0 0 2px; }
+.frame-corner-br { bottom: 12px; right: 12px; border-width: 0 1.5px 1.5px 0; border-radius: 0 0 2px 0; }
+
+/* Education card */
+.about-edu-card {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.25rem 1.5rem;
+}
+
+.edu-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.edu-degree {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.edu-uni {
+  font-size: 0.78rem;
+  color: var(--accent);
+  margin-top: 0.25rem;
+}
+
+.edu-period {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+/* Content */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about-intro {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.about-para {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  animation: fadeSlideIn 0.6s var(--delay, 0s) var(--ease-out) both;
+}
+
+/* Focus grid */
+.about-focus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.focus-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  animation: fadeSlideIn 0.6s var(--delay, 0s) var(--ease-out) both;
+  transition: transform 0.2s var(--ease-spring), border-color 0.2s ease;
+}
+
+.focus-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(108,99,255,0.3);
+}
+
+.focus-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.focus-label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.focus-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Glass card base */
+.glass-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+}
+
+/* Resume download button */
+.about-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  background: rgba(108,99,255,0.08);
+  border: 1px solid rgba(108,99,255,0.3);
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: all 0.25s var(--ease-spring);
+}
+
+.about-resume-btn:hover {
+  background: rgba(108,99,255,0.16);
+  border-color: rgba(108,99,255,0.55);
+  color: #c8c3ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108,99,255,0.2);
+}
+
+.about-resume-btn svg {
+  flex-shrink: 0;
+  transition: transform 0.2s var(--ease-spring);
+}
+
+.about-resume-btn:hover svg { transform: translateY(2px); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-character-panel {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .about-char-frame { width: 220px; }
+  .about-edu-card { flex: 1; min-width: 240px; }
+}
+
+@media (max-width: 480px) {
+  .about-focus-grid { grid-template-columns: 1fr; }
+}
