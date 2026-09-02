@@ -1,4 +1,4 @@
-# Sushant — 3D Developer Portfolio
+# PORTFOLIO --- ABOUT ME
 
 🌐 **Live Site:** [about-me-rho-one.vercel.app](https://about-me-rho-one.vercel.app)
 
