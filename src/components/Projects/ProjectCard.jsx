@@ -46,6 +46,7 @@ export default function ProjectCard({ project, index, onClick }) {
     'Socket.IO': '#010101',
     'JWT': '#d63aff',
     'REST APIs': '#FF6B6B',
+    'Vite': '#646CFF',
     'Python': '#3776AB',
     'Machine Learning': '#FF6B6B',
     'Pandas': '#150458',
@@ -191,6 +192,31 @@ function ProjectVisual({ project }) {
               <span className="v-badge">MongoDB</span>
               <span className="v-badge">Socket.IO</span>
               <span className="v-badge">React</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (project.id === 'taskflow') {
+    return (
+      <div className="visual-mern">
+        <div className="visual-screen">
+          <div className="screen-topbar">
+            <div className="screen-dots">
+              <span /><span /><span />
+            </div>
+            <div className="screen-url">taskflow · task manager</div>
+          </div>
+          <div className="screen-body">
+            <div className="screen-row accent-blue">Add &amp; Edit Tasks</div>
+            <div className="screen-row accent-purple">Filter &amp; Sort</div>
+            <div className="screen-row accent-red">Track Priority</div>
+            <div className="screen-badge-row">
+              <span className="v-badge">React</span>
+              <span className="v-badge">Node.js</span>
+              <span className="v-badge">MongoDB</span>
             </div>
           </div>
         </div>
