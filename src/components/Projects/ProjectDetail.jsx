@@ -62,22 +62,47 @@ export default function ProjectDetail({ project, onClose }) {
         </div>
 
         {/* Flow visualization (Campus Event Finder) */}
-        {project.flow && (
+        {(project.flow || project.adminFlow) && (
           <div className="detail-flow">
             <h3 className="detail-section-title">Application Flow</h3>
-            <div className="flow-steps">
-              {project.flow.map((step, i) => (
-                <React.Fragment key={step}>
-                  <div className="flow-step" style={{ '--delay': `${i * 0.06}s` }}>
-                    <div className="flow-step-num">{String(i + 1).padStart(2, '0')}</div>
-                    <div className="flow-step-label">{step}</div>
-                  </div>
-                  {i < project.flow.length - 1 && (
-                    <div className="flow-arrow">→</div>
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
+
+            {project.flow && (
+              <>
+                <p className="flow-role-label">🎓 Student Flow</p>
+                <div className="flow-steps">
+                  {project.flow.map((step, i) => (
+                    <React.Fragment key={step}>
+                      <div className="flow-step" style={{ '--delay': `${i * 0.06}s` }}>
+                        <div className="flow-step-num">{String(i + 1).padStart(2, '0')}</div>
+                        <div className="flow-step-label">{step}</div>
+                      </div>
+                      {i < project.flow.length - 1 && (
+                        <div className="flow-arrow">→</div>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {project.adminFlow && (
+              <>
+                <p className="flow-role-label" style={{ marginTop: '1.2rem' }}>🛠️ Organizer / Admin Flow</p>
+                <div className="flow-steps">
+                  {project.adminFlow.map((step, i) => (
+                    <React.Fragment key={step}>
+                      <div className="flow-step flow-step-admin" style={{ '--delay': `${i * 0.06}s` }}>
+                        <div className="flow-step-num">{String(i + 1).padStart(2, '0')}</div>
+                        <div className="flow-step-label">{step}</div>
+                      </div>
+                      {i < project.adminFlow.length - 1 && (
+                        <div className="flow-arrow">→</div>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         )}
 

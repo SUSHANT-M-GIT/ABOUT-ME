@@ -54,6 +54,7 @@ export const projects = [
     github: 'https://github.com/SUSHANT-M-GIT/CAMPUS-EVENT-FINDER-',
     live: 'https://c-e-s.vercel.app',
     flow: ['Sign Up', 'Browse Events', 'Register', 'QR Ticket', 'Attend', 'Scan QR', 'Certificate'],
+    adminFlow: ['Create Account', 'Fill Info', 'Select Organizer', 'Wait for Approval', 'Get Confirmation Email', 'Create Event', 'Manage Events'],
   },
   {
     id: 'taskflow',
