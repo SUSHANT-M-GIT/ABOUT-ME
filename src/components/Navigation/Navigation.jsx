@@ -40,6 +40,8 @@ export default function Navigation({ activeSection, setActiveSection }) {
     setMenuOpen(false)
   }
 
+  const openContact = () => scrollTo('contact')
+
   return (
     <nav
       className={`nav ${scrolled ? 'nav-scrolled' : ''}`}
@@ -86,13 +88,14 @@ export default function Navigation({ activeSection, setActiveSection }) {
       </a>
 
       {/* CTA */}
-      <a
-        href="mailto:mishrasushant029@gmail.com"
+      <button
+        type="button"
+        onClick={openContact}
         className="nav-cta"
-        aria-label="Send email to Sushant"
+        aria-label="Open contact section"
       >
         Let's Talk
-      </a>
+      </button>
 
       {/* Mobile hamburger */}
       <button
@@ -116,9 +119,9 @@ export default function Navigation({ activeSection, setActiveSection }) {
               {item.label}
             </button>
           ))}
-          <a href="mailto:mishrasushant029@gmail.com" className="nav-mobile-cta">
+          <button type="button" onClick={openContact} className="nav-mobile-cta">
             Let's Talk
-          </a>
+          </button>
           <a
             href="/Sushant_Resume.pdf"
             download="Sushant_Resume.pdf"
