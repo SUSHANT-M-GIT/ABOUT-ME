@@ -1,0 +1,180 @@
+﻿
+.experience {
+  padding: var(--section-padding) 2rem;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.experience-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.experience-inner .section-heading {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.exp-card {
+  padding: 2rem 2.25rem;
+  transition: border-color 0.22s ease, transform 0.22s var(--ease-spring);
+}
+
+.exp-card:hover {
+  border-color: rgba(108,99,255,0.28);
+  transform: translateY(-3px);
+}
+
+.exp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.exp-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.exp-role-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.exp-role {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.exp-type-badge {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  background: rgba(108,99,255,0.1);
+  border: 1px solid rgba(108,99,255,0.25);
+  padding: 0.22rem 0.65rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+
+.exp-company {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.exp-location {
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.exp-period {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding-top: 0.2rem;
+}
+
+.exp-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.exp-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.exp-bullet-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 0.55rem;
+  opacity: 0.7;
+}
+
+.exp-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.exp-tech-badge {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 2px solid rgba(108,99,255,0.5);
+  color: var(--text-secondary);
+}
+
+.exp-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.exp-link {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s var(--ease-spring);
+  text-decoration: none;
+}
+
+.exp-link-live {
+  background: rgba(108,99,255,0.1);
+  border: 1px solid rgba(108,99,255,0.25);
+  color: var(--accent);
+}
+
+.exp-link-live:hover {
+  background: rgba(108,99,255,0.2);
+  border-color: rgba(108,99,255,0.5);
+  transform: translateY(-2px);
+}
+
+.section.in-view .exp-card {
+  animation: fadeSlideIn 0.6s var(--ease-out) both;
+}
+
+@media (max-width: 640px) {
+  .exp-card { padding: 1.5rem 1.25rem; }
+  .exp-header { flex-direction: column; gap: 0.5rem; }
+  .exp-period { padding-top: 0; }
+}

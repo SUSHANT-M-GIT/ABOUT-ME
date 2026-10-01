@@ -1,4 +1,4 @@
-.cursor-system {
+﻿.cursor-system {
   position: fixed;
   top: 0;
   left: 0;
@@ -6,7 +6,6 @@
   pointer-events: none;
 }
 
-/* Main orb */
 .cursor-orb {
   position: fixed;
   top: 0;
@@ -26,7 +25,6 @@
   pointer-events: none;
 }
 
-/* Trailing ring */
 .cursor-ring {
   position: fixed;
   top: 0;
@@ -44,7 +42,6 @@
   pointer-events: none;
 }
 
-/* Link state */
 .cursor-orb.cursor-link {
   width: 8px;
   height: 8px;
@@ -58,7 +55,6 @@
   border-width: 2px;
 }
 
-/* Magnetic / project card state */
 .cursor-orb.cursor-magnetic {
   width: 14px;
   height: 14px;
@@ -71,7 +67,6 @@
   border-color: var(--accent-3);
 }
 
-/* Character hover */
 .cursor-orb.cursor-character {
   width: 10px;
   height: 10px;
@@ -87,7 +82,6 @@
   border-width: 1px;
 }
 
-/* Hide on touch */
 @media (hover: none) {
   .cursor-system { display: none; }
 }

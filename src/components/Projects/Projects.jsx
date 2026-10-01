@@ -1,21 +1,18 @@
-import React, { useState, useRef } from 'react'
+﻿import React, { useState, useRef } from 'react'
 import { useInView } from '../hooks/useInView'
 import { projects } from '../../data/portfolio'
 import ProjectCard from './ProjectCard'
 import ProjectDetail from './ProjectDetail'
 import './Projects.css'
 
-const filters = ['ALL', 'FULL-STACK', 'DATA', 'MACHINE LEARNING']
-
 export default function Projects() {
   const sectionRef = useRef(null)
-  const inView = useInView(sectionRef, { threshold: 0.1 })
-  const [activeFilter, setActiveFilter] = useState('ALL')
+  const inView = useInView(sectionRef, { threshold: 0.08 })
   const [selectedProject, setSelectedProject] = useState(null)
 
-  const filtered = activeFilter === 'ALL'
-    ? projects
-    : projects.filter(p => p.category.includes(activeFilter))
+  const featured  = projects.filter(p => p.tier === 'featured')
+  const selected  = projects.filter(p => p.tier === 'selected')
+  const others    = projects.filter(p => p.tier === 'other')
 
   return (
     <section
@@ -25,46 +22,64 @@ export default function Projects() {
     >
       <div className="section-label">
         <span className="section-label-line" />
-        <span className="section-label-text">03 · PROJECTS</span>
+        <span className="section-label-text">04 · PROJECTS</span>
         <span className="section-label-line" />
       </div>
 
       <div className="projects-inner">
         <div className="projects-header">
-          <h2 className="section-heading" id="projects-heading">WHAT I BUILD</h2>
-          <p className="projects-subtitle">
-            Real applications. Real problems. Real solutions.
-          </p>
+          <h2 className="section-heading" id="projects-heading">PROJECTS</h2>
+          <p className="projects-subtitle">Things I've designed, built and shipped.</p>
         </div>
-
-        {/* Filters */}
-        <div className="projects-filters" role="group" aria-label="Filter projects">
-          {filters.map(f => (
-            <button
-              key={f}
-              className={`filter-btn ${activeFilter === f ? 'filter-active' : ''}`}
-              onClick={() => setActiveFilter(f)}
-              aria-pressed={activeFilter === f}
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-
-        {/* Project grid */}
-        <div className="projects-grid">
-          {filtered.map((project, i) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              index={i}
-              onClick={() => setSelectedProject(project)}
-            />
-          ))}
-        </div>
+        {featured.length > 0 && (
+          <div className="projects-tier">
+            <h3 className="tier-label">Featured Project</h3>
+            <div className="projects-featured-grid">
+              {featured.map((p, i) => (
+                <ProjectCard
+                  key={p.id}
+                  project={p}
+                  index={i}
+                  variant="featured"
+                  onClick={() => setSelectedProject(p)}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+        {selected.length > 0 && (
+          <div className="projects-tier">
+            <h3 className="tier-label">Selected Projects</h3>
+            <div className="projects-selected-grid">
+              {selected.map((p, i) => (
+                <ProjectCard
+                  key={p.id}
+                  project={p}
+                  index={i}
+                  variant="selected"
+                  onClick={() => setSelectedProject(p)}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+        {others.length > 0 && (
+          <div className="projects-tier">
+            <h3 className="tier-label">Other Projects</h3>
+            <div className="projects-other-grid">
+              {others.map((p, i) => (
+                <ProjectCard
+                  key={p.id}
+                  project={p}
+                  index={i}
+                  variant="other"
+                  onClick={() => setSelectedProject(p)}
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
-
-      {/* Project detail modal */}
       {selectedProject && (
         <ProjectDetail
           project={selectedProject}

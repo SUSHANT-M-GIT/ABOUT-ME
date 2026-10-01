@@ -1,23 +1,21 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react'
+﻿import React, { useState, useEffect, Suspense, lazy } from 'react'
 import CustomCursor from './components/CustomCursor/CustomCursor'
 import IntroAnimation from './components/Intro/IntroAnimation'
 import Navigation from './components/Navigation/Navigation'
-
-// Lazy-load sections for performance
-const Hero = lazy(() => import('./components/Hero/Hero'))
-const About = lazy(() => import('./components/About/About'))
-const Projects = lazy(() => import('./components/Projects/Projects'))
-const Skills = lazy(() => import('./components/Skills/Skills'))
-const Journey = lazy(() => import('./components/Journey/Journey'))
-const ContactSection = lazy(() => import('./components/Contact/Contact'))
-const Footer = lazy(() => import('./components/Footer/Footer'))
-
 import './styles/App.css'
+const Hero          = lazy(() => import('./components/Hero/Hero'))
+const About         = lazy(() => import('./components/About/About'))
+const Experience    = lazy(() => import('./components/Experience/Experience'))
+const Projects      = lazy(() => import('./components/Projects/Projects'))
+const Skills        = lazy(() => import('./components/Skills/Skills'))
+const EducationCerts = lazy(() => import('./components/EducationCerts/EducationCerts'))
+const Contact       = lazy(() => import('./components/Contact/Contact'))
+const Footer        = lazy(() => import('./components/Footer/Footer'))
 
 export default function App() {
   const [introComplete, setIntroComplete] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
-  const [skipIntro, setSkipIntro] = useState(false)
+  const [skipIntro,    setSkipIntro]     = useState(false)
 
   useEffect(() => {
     if (skipIntro) setIntroComplete(true)
@@ -25,25 +23,20 @@ export default function App() {
 
   return (
     <>
-      {/* Custom cursor — disabled on touch devices via CSS */}
       <CustomCursor />
-
-      {/* Intro splash */}
       {!introComplete && (
         <IntroAnimation
           onComplete={() => setIntroComplete(true)}
           onSkip={() => setSkipIntro(true)}
         />
       )}
-
-      {/* Main app */}
       <div
         className={`app-shell ${introComplete ? 'app-visible' : 'app-hidden'}`}
         aria-hidden={!introComplete}
       >
         <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
 
-        <Suspense fallback={<div className="section-loading" />}>
+        <Suspense fallback={<div className="section-loading" aria-hidden="true" />}>
           <main id="main-content">
             <section id="hero">
               <Hero setActiveSection={setActiveSection} />
@@ -51,19 +44,24 @@ export default function App() {
             <section id="about">
               <About />
             </section>
+            <section id="experience">
+              <Experience />
+            </section>
             <section id="projects">
               <Projects />
             </section>
             <section id="skills">
               <Skills />
             </section>
-            <section id="journey">
-              <Journey />
+            <section id="educerts">
+              <EducationCerts />
             </section>
             <section id="contact">
-              <ContactSection />
+              <Contact />
             </section>
+
           </main>
+
           <Footer />
         </Suspense>
       </div>

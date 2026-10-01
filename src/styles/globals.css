@@ -1,4 +1,4 @@
-/* ─── Reset & Base ─────────────────────────────────────────── */
+﻿
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +6,7 @@
 }
 
 :root {
-  /* Colors */
+  
   --bg-primary: #07070e;
   --bg-secondary: #0d0d1a;
   --bg-card: rgba(255,255,255,0.03);
@@ -20,19 +20,19 @@
   --glass: rgba(255,255,255,0.04);
   --glass-border: rgba(255,255,255,0.08);
 
-  /* Typography */
+  
   --font-display: 'Sora', sans-serif;
   --font-body: 'Space Grotesk', sans-serif;
 
-  /* Spacing */
+  
   --section-padding: clamp(4rem, 10vw, 8rem);
 
-  /* Transitions */
+  
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-inout: cubic-bezier(0.87, 0, 0.13, 1);
 
-  /* Z-index layers */
+  
   --z-base: 1;
   --z-content: 10;
   --z-overlay: 100;
@@ -56,12 +56,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Touch devices restore cursor */
 @media (hover: none) {
   body { cursor: auto; }
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }
 ::-webkit-scrollbar-thumb {
@@ -69,20 +67,17 @@ body {
   border-radius: 2px;
 }
 
-/* Focus visible */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* Selection */
 ::selection {
   background: var(--accent);
   color: #fff;
 }
 
-/* Utility: visually hidden but accessible */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -95,7 +90,6 @@ body {
   border: 0;
 }
 
-/* Typography scale */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: 700;
@@ -110,10 +104,8 @@ a {
 
 img, video { max-width: 100%; display: block; }
 
-/* Canvas full coverage */
 canvas { display: block; }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -123,9 +115,6 @@ canvas { display: block; }
   }
 }
 
-/* ─── Shared Section Utilities ──────────────────────────────── */
-
-/* Section label */
 .section-label {
   display: flex;
   align-items: center;
@@ -154,7 +143,6 @@ canvas { display: block; }
   white-space: nowrap;
 }
 
-/* Section heading */
 .section-heading {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 4rem);
@@ -168,7 +156,6 @@ canvas { display: block; }
   margin-bottom: 0.25rem;
 }
 
-/* Reveal animation */
 .reveal-text {
   animation: fadeSlideIn 0.7s var(--ease-out) both;
 }
@@ -178,7 +165,6 @@ canvas { display: block; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Section base (used by in-view trigger) */
 .section {
   opacity: 1;
 }
@@ -210,7 +196,6 @@ canvas { display: block; }
   transform: translateY(0);
 }
 
-/* Stagger children */
 .section.in-view .section-heading { transition-delay: 0s; }
 .section.in-view .about-intro { transition-delay: 0.1s; }
 .section.in-view .about-para { transition-delay: var(--delay, 0.2s); }
@@ -221,7 +206,6 @@ canvas { display: block; }
 .section.in-view .contact-heading { transition-delay: 0.1s; }
 .section.in-view .contact-sub { transition-delay: 0.2s; }
 
-/* Glass card base (global) */
 .glass-card {
   background: var(--glass);
   border: 1px solid var(--glass-border);
@@ -230,7 +214,6 @@ canvas { display: block; }
   -webkit-backdrop-filter: blur(12px);
 }
 
-/* ─── Global small-screen padding adjustments ───────────────── */
 @media (max-width: 420px) {
   .about,
   .projects,
@@ -241,7 +224,7 @@ canvas { display: block; }
     padding-right: 1rem;
   }
 
-  /* Tighten section label gap */
+  
   .section-label { gap: 0.5rem; }
   .section-label-line { max-width: 30px; }
 }

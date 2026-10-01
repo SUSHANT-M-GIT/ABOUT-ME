@@ -1,3 +1,4 @@
+﻿
 .about {
   padding: var(--section-padding) 2rem;
   background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
@@ -12,85 +13,38 @@
   left: 50%;
   transform: translateX(-50%);
   width: 1px;
-  height: 80px;
+  height: 60px;
   background: linear-gradient(180deg, transparent, var(--accent));
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
 .about-inner {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
+  margin-top: 2.5rem;
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 5rem;
+  grid-template-columns: 260px 1fr;
+  gap: 4rem;
   align-items: start;
-  margin-top: 3rem;
 }
 
-/* Character panel */
-.about-character-panel {
+.about-sidebar {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
   position: sticky;
   top: 100px;
 }
 
-.about-char-frame {
-  position: relative;
-  padding: 2rem;
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
-  border-radius: 24px;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.about-char-frame::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(108,99,255,0.08) 0%, transparent 60%);
-}
-
-.about-char-svg {
-  width: 200px;
-  height: auto;
-  filter: drop-shadow(0 10px 40px rgba(108,99,255,0.3));
-  animation: aboutCharFloat 4s ease-in-out infinite;
-}
-
-@keyframes aboutCharFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-/* Corner accents */
-.frame-corner {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-color: var(--accent);
-  border-style: solid;
-}
-.frame-corner-tl { top: 12px; left: 12px; border-width: 1.5px 0 0 1.5px; border-radius: 2px 0 0 0; }
-.frame-corner-tr { top: 12px; right: 12px; border-width: 1.5px 1.5px 0 0; border-radius: 0 2px 0 0; }
-.frame-corner-bl { bottom: 12px; left: 12px; border-width: 0 0 1.5px 1.5px; border-radius: 0 0 0 2px; }
-.frame-corner-br { bottom: 12px; right: 12px; border-width: 0 1.5px 1.5px 0; border-radius: 0 0 2px 0; }
-
-/* Education card */
 .about-edu-card {
-  width: 100%;
   display: flex;
-  gap: 1rem;
+  gap: 0.85rem;
   align-items: flex-start;
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem 1.4rem;
 }
 
 .edu-icon {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 1;
   flex-shrink: 0;
   margin-top: 0.1rem;
@@ -101,7 +55,7 @@
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--text-primary);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .edu-uni {
@@ -116,18 +70,50 @@
   margin-top: 0.15rem;
 }
 
-/* Content */
+.about-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.7rem 1.25rem;
+  border-radius: 10px;
+  background: rgba(108,99,255,0.07);
+  border: 1px solid rgba(108,99,255,0.25);
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: all 0.22s var(--ease-spring);
+  text-decoration: none;
+}
+
+.about-resume-btn:hover {
+  background: rgba(108,99,255,0.14);
+  border-color: rgba(108,99,255,0.5);
+  color: #c8c3ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(108,99,255,0.18);
+}
+
+.about-resume-btn svg {
+  flex-shrink: 0;
+  transition: transform 0.2s var(--ease-spring);
+}
+.about-resume-btn:hover svg { transform: translateY(2px); }
+
 .about-content {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.1rem;
 }
 
 .about-intro {
   font-family: var(--font-body);
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
   color: var(--text-primary);
-  line-height: 1.7;
+  line-height: 1.75;
   font-weight: 400;
 }
 
@@ -135,110 +121,101 @@
   font-size: 0.95rem;
   color: var(--text-secondary);
   line-height: 1.8;
-  animation: fadeSlideIn 0.6s var(--delay, 0s) var(--ease-out) both;
+  animation: fadeSlideIn 0.6s var(--delay, 0.2s) var(--ease-out) both;
 }
 
-/* Focus grid */
-.about-focus-grid {
+.about-build-section {
+  margin-top: 0.75rem;
+}
+
+.about-build-heading {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.about-build-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-top: 0.5rem;
+  gap: 0.85rem;
 }
 
-.focus-card {
+.build-card {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  padding: 1rem 1.25rem;
-  animation: fadeSlideIn 0.6s var(--delay, 0s) var(--ease-out) both;
+  padding: 1rem 1.15rem;
+  animation: fadeSlideIn 0.55s var(--delay, 0.3s) var(--ease-out) both;
   transition: transform 0.2s var(--ease-spring), border-color 0.2s ease;
 }
 
-.focus-card:hover {
+.build-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(108,99,255,0.3);
+  border-color: rgba(108,99,255,0.28);
 }
 
-.focus-icon {
-  font-size: 1.3rem;
+.build-icon {
+  font-size: 1.2rem;
   line-height: 1;
   flex-shrink: 0;
   margin-top: 0.1rem;
 }
 
-.focus-label {
+.build-label {
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.22rem;
+  line-height: 1.3;
 }
 
-.focus-desc {
+.build-desc {
   font-size: 0.75rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
-/* Glass card base */
-.glass-card {
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  backdrop-filter: blur(12px);
-}
-
-/* Resume download button */
-.about-resume-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  width: 100%;
-  padding: 0.75rem 1.5rem;
-  border-radius: 12px;
-  background: rgba(108,99,255,0.08);
-  border: 1px solid rgba(108,99,255,0.3);
-  color: var(--accent);
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  transition: all 0.25s var(--ease-spring);
-}
-
-.about-resume-btn:hover {
-  background: rgba(108,99,255,0.16);
-  border-color: rgba(108,99,255,0.55);
-  color: #c8c3ff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(108,99,255,0.2);
-}
-
-.about-resume-btn svg {
-  flex-shrink: 0;
-  transition: transform 0.2s var(--ease-spring);
-}
-
-.about-resume-btn:hover svg { transform: translateY(2px); }
-
-/* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .about-inner {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  .about-character-panel {
+
+  .about-sidebar {
     position: static;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    align-items: stretch;
   }
-  .about-char-frame { width: 220px; }
-  .about-edu-card { flex: 1; min-width: 240px; }
+
+  .about-edu-card {
+    flex: 1;
+    min-width: 240px;
+  }
+
+  .about-resume-btn {
+    flex: 0 0 auto;
+    width: auto;
+    align-self: flex-end;
+  }
 }
 
-@media (max-width: 480px) {
-  .about-focus-grid { grid-template-columns: 1fr; }
+@media (max-width: 520px) {
+  .about-build-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-sidebar {
+    flex-direction: column;
+  }
+
+  .about-resume-btn {
+    width: 100%;
+    align-self: stretch;
+  }
 }

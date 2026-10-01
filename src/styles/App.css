@@ -1,4 +1,4 @@
-/* App shell */
+﻿
 .app-shell {
   position: relative;
   min-height: 100vh;
@@ -15,7 +15,6 @@
   transition: opacity 0.6s var(--ease-out);
 }
 
-/* Section loading placeholder */
 .section-loading {
   height: 100vh;
   display: flex;
@@ -24,13 +23,11 @@
   background: var(--bg-primary);
 }
 
-/* Section base styles */
 section {
   position: relative;
   overflow: hidden;
 }
 
-/* Skip link for accessibility */
 .skip-link {
   position: absolute;
   top: -100%;

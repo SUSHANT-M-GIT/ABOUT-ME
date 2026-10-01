@@ -1,9 +1,5 @@
 import { useState, useEffect } from 'react'
 
-/**
- * Returns true once the target element enters the viewport.
- * Stays true after first intersection (one-shot animation trigger).
- */
 export function useInView(ref, options = {}) {
   const [inView, setInView] = useState(false)
 
@@ -15,7 +11,7 @@ export function useInView(ref, options = {}) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true)
-          observer.disconnect() // one-shot
+          observer.disconnect()
         }
       },
       { threshold: 0.1, ...options }

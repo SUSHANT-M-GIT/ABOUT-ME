@@ -1,4 +1,4 @@
-.intro-overlay {
+﻿.intro-overlay {
   position: fixed;
   inset: 0;
   z-index: var(--z-intro);
@@ -46,7 +46,6 @@
   justify-content: center;
 }
 
-/* Point */
 .intro-point {
   width: 4px;
   height: 4px;
@@ -63,7 +62,6 @@
   box-shadow: 0 0 40px var(--accent), 0 0 80px rgba(108,99,255,0.4);
 }
 
-/* Portal */
 .intro-portal {
   position: absolute;
   width: 0;
@@ -124,7 +122,6 @@
   to { transform: rotate(360deg); }
 }
 
-/* Character */
 .intro-character {
   position: absolute;
   bottom: -160px;
@@ -155,7 +152,6 @@
   filter: drop-shadow(0 0 30px rgba(108,99,255,0.5)) drop-shadow(0 20px 40px rgba(0,0,0,0.8));
 }
 
-/* Name */
 .intro-name {
   position: absolute;
   bottom: -200px;
@@ -179,7 +175,6 @@
   background-clip: text;
 }
 
-/* Particles */
 .intro-particles {
   position: absolute;
   inset: 0;
@@ -207,9 +202,8 @@
   100% { opacity: 0; transform: scale(0.5) translateY(-60px); }
 }
 
-/* ── Responsive fixes ───────────────────────────────────────── */
 @media (max-width: 480px) {
-  /* Scale down portal to fit screen */
+  
   .intro-portal-open {
     width: min(240px, 70vw);
     height: min(240px, 70vw);

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+﻿import React, { useEffect, useRef, useState } from 'react'
 import './CustomCursor.css'
 
 export default function CustomCursor() {
@@ -10,8 +10,6 @@ export default function CustomCursor() {
   const ringPos = useRef({ x: 0, y: 0 })
   const [cursorType, setCursorType] = useState('default')
   const animRef = useRef(null)
-
-  // Detect touch device
   const isTouch = typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches
 
   useEffect(() => {
@@ -42,8 +40,6 @@ export default function CustomCursor() {
     window.addEventListener('mouseover', onMouseOver)
     window.addEventListener('mousedown', onMouseDown)
     window.addEventListener('mouseup', onMouseUp)
-
-    // Smooth follow animation
     const animate = () => {
       const ease = 0.12
       const ringEase = 0.08
@@ -78,12 +74,10 @@ export default function CustomCursor() {
 
   return (
     <div className="cursor-system" aria-hidden="true">
-      {/* Main orb */}
       <div
         ref={cursorRef}
         className={`cursor-orb cursor-${cursorType.split(' ')[0]}`}
       />
-      {/* Trailing ring */}
       <div
         ref={ringRef}
         className={`cursor-ring cursor-ring-${cursorType.split(' ')[0]}`}
