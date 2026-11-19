@@ -53,7 +53,7 @@ export const projects = [
     tags: ['FULL-STACK', 'MERN', 'REAL-TIME'],
     category: ['FULL-STACK'],
     tier: 'featured',
-    screenshot: '/projects/campus-event-finder.svg',
+    screenshot: '/projects/campus-event-finder.png',
     tagline: 'Replaced manual attendance sheets with QR check-in for campus events.',
     description:
       'A full-stack campus event platform with role-based access for 3 roles — students, working professionals, and organizers. Students discover and register for events; organizers create events, manage registrations, and scan QR attendance in real time.',
@@ -98,7 +98,7 @@ export const projects = [
     tags: ['MACHINE LEARNING', 'PYTHON', 'DEEP LEARNING'],
     category: ['MACHINE LEARNING'],
     tier: 'featured',
-    screenshot: '/projects/linkshield.svg',
+    screenshot: '/projects/linkshield.png',
     tagline: 'CNN-BiLSTM phishing detector — 97.75% accuracy on 339,723 URLs.',
     description:
       'A deep learning phishing URL classifier that fuses a character-level CNN-BiLSTM with 12 structural URL features (length, subdomains, HTTPS, IP indicators). Trained on 339,723 cleaned URLs with a near-even phishing/legitimate split. Deployed as a Streamlit app that returns phishing/legitimate in real time for any URL.',
@@ -132,7 +132,7 @@ export const projects = [
     tags: ['FULL-STACK', 'INTERNSHIP', 'MERN'],
     category: ['FULL-STACK'],
     tier: 'selected',
-    screenshot: '/projects/taskflow.svg',
+    screenshot: '/projects/taskflow.png',
     tagline: 'Full-stack task manager built during a virtual internship at iStudio.',
     description:
       'A full-stack task manager with a REST API (GET, POST, PUT, DELETE) persisting to MongoDB Atlas. Supports title search, filters by status and priority, sorting by date or priority, and rejects past due dates via validation. Responsive UI deployed on Vercel.',
