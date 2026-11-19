@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="100%" stop-color="#0d0620"/>
+    </linearGradient>
+    <linearGradient id="btn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Grid overlay -->
+  <rect width="1200" height="630" fill="none" stroke="#6C63FF" stroke-width="0.3" opacity="0.08"/>
+
+  <!-- Nav -->
+  <rect x="0" y="0" width="1200" height="56" fill="rgba(10,5,20,0.9)"/>
+  <!-- Logo -->
+  <rect x="32" y="18" width="22" height="22" rx="6" fill="#7c3aed"/>
+  <text x="40" y="32" font-family="sans-serif" font-size="11" font-weight="bold" fill="white">⚡</text>
+  <text x="62" y="33" font-family="sans-serif" font-size="14" font-weight="600" fill="white">Campus</text>
+  <text x="116" y="33" font-family="sans-serif" font-size="14" font-weight="800" fill="white">EventFinder</text>
+  <!-- Nav links -->
+  <text x="880" y="33" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">Events</text>
+  <text x="940" y="33" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.7)">Sign In</text>
+  <rect x="1010" y="14" width="140" height="30" rx="8" fill="url(#btn)"/>
+  <text x="1046" y="33" font-family="sans-serif" font-size="13" font-weight="600" fill="white">Host an Event →</text>
+
+  <!-- Hero badge -->
+  <rect x="80" y="90" width="200" height="28" rx="14" fill="rgba(108,99,255,0.15)" stroke="rgba(108,99,255,0.4)" stroke-width="1"/>
+  <text x="98" y="109" font-family="sans-serif" font-size="12" fill="#a78bfa">⚡ CAMPUS EVENTS, MADE SIMPLE</text>
+
+  <!-- Headline -->
+  <text x="80" y="175" font-family="sans-serif" font-size="58" font-weight="900" fill="white">Discover events.</text>
+  <text x="80" y="250" font-family="sans-serif" font-size="58" font-weight="900" fill="white">Register easily.</text>
+  <text x="80" y="325" font-family="sans-serif" font-size="58" font-weight="900" fill="white">Attend and grow.</text>
+
+  <!-- Subtext -->
+  <text x="80" y="370" font-family="sans-serif" font-size="16" fill="rgba(255,255,255,0.65)">Find college events that match your interests and register</text>
+  <text x="80" y="392" font-family="sans-serif" font-size="16" fill="rgba(255,255,255,0.65)">in a few clicks. Organizers can create events, manage</text>
+  <text x="80" y="414" font-family="sans-serif" font-size="16" fill="rgba(255,255,255,0.65)">registrations, and track attendance — all from one platform.</text>
+
+  <!-- CTA Buttons -->
+  <rect x="80" y="440" width="180" height="44" rx="8" fill="url(#btn)"/>
+  <text x="124" y="467" font-family="sans-serif" font-size="15" font-weight="600" fill="white">Browse Events →</text>
+  <rect x="276" y="440" width="140" height="44" rx="8" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <text x="306" y="467" font-family="sans-serif" font-size="15" fill="rgba(255,255,255,0.8)">Host an Event</text>
+
+  <!-- Stats row -->
+  <text x="80" y="530" font-family="sans-serif" font-size="16" font-weight="800" fill="white">QR</text>
+  <text x="80" y="550" font-family="sans-serif" font-size="10" letter-spacing="2" fill="rgba(255,255,255,0.4)">ATTENDANCE</text>
+  <text x="175" y="530" font-family="sans-serif" font-size="16" font-weight="800" fill="white">Auto</text>
+  <text x="175" y="550" font-family="sans-serif" font-size="10" letter-spacing="2" fill="rgba(255,255,255,0.4)">CERTIFICATES</text>
+  <text x="285" y="530" font-family="sans-serif" font-size="16" font-weight="800" fill="white">Live</text>
+  <text x="285" y="550" font-family="sans-serif" font-size="10" letter-spacing="2" fill="rgba(255,255,255,0.4)">NOTIFICATIONS</text>
+  <text x="390" y="530" font-family="sans-serif" font-size="16" font-weight="800" fill="white">Free</text>
+  <text x="390" y="550" font-family="sans-serif" font-size="10" letter-spacing="2" fill="rgba(255,255,255,0.4)">TO JOIN</text>
+
+  <!-- Right side decorative event cards -->
+  <rect x="720" y="80" width="420" height="200" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(108,99,255,0.2)" stroke-width="1"/>
+  <rect x="740" y="100" width="380" height="80" rx="8" fill="rgba(108,99,255,0.1)"/>
+  <text x="760" y="148" font-family="sans-serif" font-size="20" font-weight="700" fill="white">Tech Summit 2026</text>
+  <text x="760" y="168" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.5)">Nov 20 · REVA University · 500 seats</text>
+  <rect x="740" y="195" width="80" height="22" rx="5" fill="rgba(0,217,255,0.15)" stroke="rgba(0,217,255,0.3)" stroke-width="1"/>
+  <text x="762" y="210" font-family="sans-serif" font-size="11" fill="#00D9FF">Technology</text>
+  <rect x="830" y="195" width="90" height="22" rx="5" fill="rgba(108,99,255,0.15)" stroke="rgba(108,99,255,0.3)" stroke-width="1"/>
+  <text x="850" y="210" font-family="sans-serif" font-size="11" fill="#a78bfa">Free Entry</text>
+  <rect x="1050" y="195" width="90" height="22" rx="8" fill="url(#btn)"/>
+  <text x="1070" y="210" font-family="sans-serif" font-size="12" fill="white">Register</text>
+
+  <rect x="720" y="300" width="420" height="200" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(0,217,255,0.15)" stroke-width="1"/>
+  <rect x="740" y="320" width="380" height="80" rx="8" fill="rgba(0,217,255,0.06)"/>
+  <text x="760" y="368" font-family="sans-serif" font-size="20" font-weight="700" fill="white">AI Workshop Series</text>
+  <text x="760" y="388" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.5)">Dec 05 · Online · 200 seats</text>
+  <rect x="740" y="415" width="80" height="22" rx="5" fill="rgba(255,107,107,0.15)" stroke="rgba(255,107,107,0.3)" stroke-width="1"/>
+  <text x="757" y="430" font-family="sans-serif" font-size="11" fill="#FF6B6B">Workshop</text>
+  <rect x="1050" y="415" width="90" height="22" rx="8" fill="url(#btn)"/>
+  <text x="1070" y="430" font-family="sans-serif" font-size="12" fill="white">Register</text>
+
+  <rect x="720" y="520" width="420" height="85" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="760" y="560" font-family="sans-serif" font-size="17" font-weight="700" fill="white">Hackathon 2026</text>
+  <text x="760" y="580" font-family="sans-serif" font-size="13" fill="rgba(255,255,255,0.5)">Jan 15 · Bangalore · Team of 4</text>
+  <rect x="1050" y="537" width="90" height="22" rx="8" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="1067" y="552" font-family="sans-serif" font-size="12" fill="rgba(255,255,255,0.7)">View More</text>
+</svg>

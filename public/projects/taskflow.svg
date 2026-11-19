@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0f0ff"/>
+      <stop offset="100%" stop-color="#e8e8f8"/>
+    </linearGradient>
+    <linearGradient id="btn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6C63FF"/>
+      <stop offset="100%" stop-color="#5a52d5"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Top nav -->
+  <rect x="0" y="0" width="1200" height="60" fill="white" filter="drop-shadow(0 1px 4px rgba(0,0,0,0.06))"/>
+  <text x="40" y="22" font-family="sans-serif" font-size="11" font-weight="600" fill="#6C63FF" letter-spacing="2">WORKSPACE</text>
+  <text x="38" y="47" font-family="sans-serif" font-size="26" font-weight="800" fill="#0f0f1f">⚡ TaskFlow</text>
+  <!-- Top right -->
+  <rect x="980" y="14" width="100" height="32" rx="8" fill="rgba(108,99,255,0.1)" stroke="rgba(108,99,255,0.3)" stroke-width="1"/>
+  <text x="1004" y="34" font-family="sans-serif" font-size="13" fill="#6C63FF">0 tasks</text>
+  <rect x="1096" y="14" width="100" height="32" rx="8" fill="url(#btn)"/>
+  <text x="1112" y="34" font-family="sans-serif" font-size="13" font-weight="600" fill="white">+ New Task</text>
+
+  <!-- Stat cards -->
+  <rect x="20" y="80" width="270" height="100" rx="10" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))"/>
+  <rect x="20" y="80" width="270" height="4" rx="2" fill="#6C63FF"/>
+  <text x="40" y="122" font-family="sans-serif" font-size="11" font-weight="700" fill="#6C63FF" letter-spacing="2">TOTAL</text>
+  <text x="40" y="158" font-family="sans-serif" font-size="36" font-weight="800" fill="#0f0f1f">0</text>
+
+  <rect x="310" y="80" width="270" height="100" rx="10" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))"/>
+  <rect x="310" y="80" width="270" height="4" rx="2" fill="#f59e0b"/>
+  <text x="330" y="122" font-family="sans-serif" font-size="11" font-weight="700" fill="#f59e0b" letter-spacing="2">PENDING</text>
+  <text x="330" y="158" font-family="sans-serif" font-size="36" font-weight="800" fill="#0f0f1f">0</text>
+
+  <rect x="600" y="80" width="270" height="100" rx="10" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))"/>
+  <rect x="600" y="80" width="270" height="4" rx="2" fill="#22c55e"/>
+  <text x="620" y="122" font-family="sans-serif" font-size="11" font-weight="700" fill="#22c55e" letter-spacing="2">IN PROGRESS</text>
+  <text x="620" y="158" font-family="sans-serif" font-size="36" font-weight="800" fill="#0f0f1f">0</text>
+
+  <rect x="890" y="80" width="290" height="100" rx="10" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))"/>
+  <rect x="890" y="80" width="290" height="4" rx="2" fill="#6C63FF"/>
+  <text x="910" y="122" font-family="sans-serif" font-size="11" font-weight="700" fill="#6C63FF" letter-spacing="2">COMPLETED</text>
+  <text x="910" y="158" font-family="sans-serif" font-size="36" font-weight="800" fill="#0f0f1f">0</text>
+
+  <!-- Left panel: Create Task -->
+  <rect x="20" y="200" width="340" height="420" rx="12" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))"/>
+  <text x="44" y="236" font-family="sans-serif" font-size="16" font-weight="700" fill="#0f0f1f">⚡ Create Task</text>
+
+  <text x="44" y="268" font-family="sans-serif" font-size="11" font-weight="600" fill="#374151" letter-spacing="1">TITLE *</text>
+  <rect x="40" y="278" width="300" height="38" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="58" y="301" font-family="sans-serif" font-size="14" fill="#94a3b8">What needs to be done?</text>
+
+  <text x="44" y="340" font-family="sans-serif" font-size="11" font-weight="600" fill="#374151" letter-spacing="1">DESCRIPTION</text>
+  <rect x="40" y="350" width="300" height="68" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="58" y="376" font-family="sans-serif" font-size="14" fill="#94a3b8">Add details (optional)</text>
+
+  <text x="44" y="444" font-family="sans-serif" font-size="11" font-weight="600" fill="#374151" letter-spacing="1">PRIORITY</text>
+  <rect x="40" y="454" width="136" height="36" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="58" y="476" font-family="sans-serif" font-size="14" fill="#374151">🟡 Medium</text>
+
+  <text x="200" y="444" font-family="sans-serif" font-size="11" font-weight="600" fill="#374151" letter-spacing="1">STATUS</text>
+  <rect x="196" y="454" width="144" height="36" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="214" y="476" font-family="sans-serif" font-size="14" fill="#374151">Pending</text>
+
+  <text x="44" y="516" font-family="sans-serif" font-size="11" font-weight="600" fill="#374151" letter-spacing="1">DUE DATE</text>
+  <rect x="40" y="526" width="136" height="36" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="58" y="548" font-family="sans-serif" font-size="13" fill="#374151">19-09-2026</text>
+  <text x="200" y="516" font-family="sans-serif" font-size="11" font-weight="600" fill="#374151" letter-spacing="1">DUE TIME</text>
+  <rect x="196" y="526" width="144" height="36" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="214" y="548" font-family="sans-serif" font-size="13" fill="#94a3b8">--:--</text>
+
+  <rect x="40" y="582" width="300" height="22" rx="6" fill="url(#btn)"/>
+  <text x="134" y="597" font-family="sans-serif" font-size="14" font-weight="600" fill="white">Save Task</text>
+
+  <!-- Right panel: Task List -->
+  <rect x="378" y="200" width="802" height="420" rx="12" fill="white" filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))"/>
+  <text x="402" y="236" font-family="sans-serif" font-size="16" font-weight="700" fill="#0f0f1f">Task List</text>
+  <rect x="1070" y="216" width="90" height="28" rx="14" fill="rgba(108,99,255,0.1)" stroke="rgba(108,99,255,0.2)" stroke-width="1"/>
+  <text x="1090" y="233" font-family="sans-serif" font-size="13" fill="#6C63FF">0 shown</text>
+
+  <!-- Search + filter row -->
+  <rect x="398" y="254" width="220" height="36" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="416" y="277" font-family="sans-serif" font-size="13" fill="#94a3b8">🔍 Search tasks...</text>
+  <rect x="634" y="254" width="150" height="36" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="652" y="277" font-family="sans-serif" font-size="13" fill="#374151">All statuses ▾</text>
+  <rect x="800" y="254" width="150" height="36" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="818" y="277" font-family="sans-serif" font-size="13" fill="#374151">All priorities ▾</text>
+  <rect x="966" y="254" width="100" height="36" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="984" y="277" font-family="sans-serif" font-size="13" fill="#374151">Newest ▾</text>
+
+  <!-- Empty state -->
+  <text x="750" y="430" font-family="sans-serif" font-size="40" text-anchor="middle">📋</text>
+  <text x="750" y="490" font-family="sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">No tasks yet — create one!</text>
+</svg>
