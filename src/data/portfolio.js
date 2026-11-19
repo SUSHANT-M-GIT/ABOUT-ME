@@ -118,8 +118,7 @@ export const projects = [
     ],
     tech: ['Python', 'TensorFlow', 'Keras', 'Scikit-learn', 'XGBoost', 'Streamlit', 'Pandas', 'NumPy'],
     color: '#0d9488',
-    // TODO: Add GitHub link once repo is public
-    github: null,
+    github: 'https://github.com/SUSHANT-M-GIT/Link-Sheild',
     // TODO: Add Streamlit live demo link
     live: null,
     flow: ['Paste URL', 'Extract Features', 'CNN-BiLSTM', 'Feature Fusion', 'Verdict'],
@@ -151,8 +150,7 @@ export const projects = [
     ],
     tech: ['React', 'Node.js', 'Express.js', 'MongoDB Atlas', 'REST APIs', 'Vite'],
     color: '#00D9FF',
-    // TODO: Add GitHub repo link
-    github: null,
+    github: 'https://github.com/SUSHANT-M-GIT/TASK-MANAGEMENT-APP-',
     live: 'https://taskflow-tawny-gamma.vercel.app/',
     internship: true,
     flow: ['Add Task', 'Set Priority', 'Track Status', 'Search & Filter', 'Complete'],

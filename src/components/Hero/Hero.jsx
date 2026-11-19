@@ -99,7 +99,7 @@ export default function Hero({ setActiveSection }) {
           <div className="hero-photo-wrap">
             {!photoError ? (
               <img
-                src="/photo.jpg"
+                src="/photo.jpeg"
                 alt="Sushant Mishra"
                 className="hero-photo"
                 onError={() => setPhotoError(true)}
