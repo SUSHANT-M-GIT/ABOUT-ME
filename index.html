@@ -4,25 +4,90 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Sushant Mishra — Full-Stack Developer. Final-year CS & IT student building full-stack web applications, REST APIs and data-driven products." />
-    <meta name="theme-color" content="#07070e" />
+
+    <!-- Primary meta -->
+    <title>Sushant Mishra — Full-Stack Developer & ML Engineer</title>
+    <meta name="description" content="Sushant Mishra — full-stack developer (React, Node.js, MongoDB) and ML engineer. Built a QR-based campus events platform and a phishing detector with 97.75% accuracy. Open to full-stack and software developer roles." />
     <meta name="author" content="Sushant Mishra" />
-    <meta property="og:type"        content="website" />
-    <meta property="og:url"         content="https://about-me-rho-one.vercel.app" />
-    <meta property="og:title"       content="Sushant Mishra — Full-Stack Developer" />
-    <meta property="og:description" content="Final-year CS & IT student building full-stack web applications, REST APIs and data-driven products." />
-    <meta name="twitter:card"        content="summary" />
-    <meta name="twitter:title"       content="Sushant Mishra — Full-Stack Developer" />
-    <meta name="twitter:description" content="Final-year CS & IT student building full-stack web applications, REST APIs and data-driven products." />
+    <meta name="theme-color" content="#07070e" />
     <link rel="canonical" href="https://about-me-rho-one.vercel.app" />
 
-    <title>Sushant Mishra — Full-Stack Developer</title>
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://about-me-rho-one.vercel.app" />
+    <meta property="og:title"       content="Sushant Mishra — Full-Stack Developer & ML Engineer" />
+    <meta property="og:description" content="Full-stack developer who ships real products — QR-based campus events platform and an ML phishing detector with 97.75% accuracy." />
+    <meta property="og:image"       content="https://about-me-rho-one.vercel.app/og.png" />
+    <meta property="og:image:alt"   content="Sushant Mishra portfolio — Full-Stack Developer" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="Sushant Mishra — Full-Stack Developer & ML Engineer" />
+    <meta name="twitter:description" content="Full-stack developer who ships real products — QR-based campus events platform and an ML phishing detector with 97.75% accuracy." />
+    <meta name="twitter:image"       content="https://about-me-rho-one.vercel.app/og.png" />
+    <meta name="twitter:image:alt"   content="Sushant Mishra portfolio" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- JSON-LD Person schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sushant Mishra",
+      "jobTitle": "Full-Stack Developer",
+      "url": "https://about-me-rho-one.vercel.app",
+      "email": "mishrasushant029@gmail.com",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "REVA University"
+      },
+      "sameAs": [
+        "https://github.com/SUSHANT-M-GIT",
+        "https://www.linkedin.com/in/sushant-sm"
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Noscript fallback for crawlers and no-JS users -->
+    <noscript>
+      <style>
+        body { font-family: sans-serif; background: #07070e; color: #f0f0ff; padding: 2rem; max-width: 700px; margin: 0 auto; }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.1rem; color: #6C63FF; margin-top: 1.5rem; }
+        a { color: #00D9FF; }
+        p, li { line-height: 1.7; color: rgba(240,240,255,0.7); }
+        ul { padding-left: 1.25rem; }
+      </style>
+      <h1>Sushant Mishra — Full-Stack Developer</h1>
+      <p>Final-year CS &amp; IT student at REVA University. Builds full-stack web apps and ML models end to end.</p>
+
+      <h2>Featured Projects</h2>
+      <ul>
+        <li><strong>Campus Event Finder</strong> — Full-stack campus events platform with QR attendance, 3 OAuth methods, real-time updates. <a href="https://c-e-s.vercel.app">Live demo</a> · <a href="https://github.com/SUSHANT-M-GIT/CAMPUS-EVENT-FINDER-">GitHub</a></li>
+        <li><strong>LinkShield</strong> — CNN-BiLSTM phishing URL detector, 97.75% accuracy, 0.9980 ROC-AUC, beats XGBoost by 6+ points.</li>
+        <li><strong>TaskFlow</strong> — Full-stack task manager with REST API and MongoDB Atlas. <a href="https://taskflow-tawny-gamma.vercel.app/">Live demo</a></li>
+      </ul>
+
+      <h2>Skills</h2>
+      <p>React · TypeScript · Node.js · Express.js · MongoDB · Socket.IO · Python · TensorFlow · Scikit-learn · SQL · Power BI</p>
+
+      <h2>Contact</h2>
+      <ul>
+        <li>Email: <a href="mailto:mishrasushant029@gmail.com">mishrasushant029@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/sushant-sm">linkedin.com/in/sushant-sm</a></li>
+        <li>GitHub: <a href="https://github.com/SUSHANT-M-GIT">github.com/SUSHANT-M-GIT</a></li>
+      </ul>
+    </noscript>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
