@@ -179,8 +179,24 @@ canvas { display: block; }
 .section .contact-heading,
 .section .contact-sub {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+  transform: translateY(20px);
+  transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+}
+
+/* Visible if JS hasn't run IntersectionObserver yet */
+@supports not (selector(:has(*))) {
+  .section .section-heading,
+  .section .about-intro,
+  .section .about-para,
+  .section .focus-card,
+  .section .timeline-item,
+  .section .skill-pill,
+  .section .skill-category-card,
+  .section .contact-heading,
+  .section .contact-sub {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .section.in-view .section-heading,
