@@ -1,17 +1,14 @@
 ﻿import React, { useRef, useEffect, useState } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { PerspectiveCamera, Stars } from '@react-three/drei'
-import DeveloperCharacter from '../Character/DeveloperCharacter'
-import ParticleField from '../Three/ParticleField'
 import { hero, contact } from '../../data/portfolio'
 import './Hero.css'
 
 export default function Hero({ setActiveSection }) {
   const heroRef = useRef(null)
   const [mounted, setMounted] = useState(false)
+  const [photoError, setPhotoError] = useState(false)
 
   useEffect(() => {
-    const t = setTimeout(() => setMounted(true), 100)
+    const t = setTimeout(() => setMounted(true), 80)
     return () => clearTimeout(t)
   }, [])
 
@@ -21,30 +18,29 @@ export default function Hero({ setActiveSection }) {
 
   return (
     <section className="hero" ref={heroRef} aria-label="Hero section">
-      <div className="hero-canvas-wrap" aria-hidden="true">
-        <Canvas dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
-          <PerspectiveCamera makeDefault fov={60} position={[0, 0, 5]} />
-          <ambientLight intensity={0.25} />
-          <pointLight position={[5, 5, 5]} intensity={0.8} color="#6C63FF" />
-          <pointLight position={[-5, -2, 3]} intensity={0.35} color="#00D9FF" />
-          <Stars radius={100} depth={50} count={1200} factor={3} saturation={0} fade speed={0.3} />
-          <ParticleField count={40} />
-        </Canvas>
-      </div>
+      {/* Lightweight CSS grid background — replaces Three.js canvas */}
       <div className="hero-bg-grid" aria-hidden="true" />
+      <div className="hero-bg-glow" aria-hidden="true" />
+
       <div className={`hero-layout ${mounted ? 'hero-mounted' : ''}`}>
+        {/* ── Left: content ── */}
         <div className="hero-content">
           <div className="hero-badge" aria-label="Current status">
             <span className="hero-badge-dot" aria-hidden="true" />
-            <span>B.Tech CSE &amp; IT · REVA University</span>
+            <span>B.Tech CS &amp; IT · REVA University</span>
           </div>
+
           <h1 className="hero-name">{hero.name}</h1>
+
           <div className="hero-title-row" aria-label="Role">
             <span className="hero-title-line" aria-hidden="true" />
             <p className="hero-title">{hero.title}</p>
             <span className="hero-title-line hero-title-line-r" aria-hidden="true" />
           </div>
+
           <p className="hero-tagline">{hero.tagline}</p>
+
+          {/* CTAs */}
           <div className="hero-ctas" role="group" aria-label="Primary actions">
             <button
               className="hero-btn hero-btn-primary"
@@ -56,7 +52,6 @@ export default function Hero({ setActiveSection }) {
                 <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
-
             <a
               href="/Sushant_Resume.pdf"
               download="Sushant_Resume.pdf"
@@ -69,12 +64,14 @@ export default function Hero({ setActiveSection }) {
               Download Resume
             </a>
           </div>
+
+          {/* Social links — high-contrast */}
           <div className="hero-links" aria-label="Social links">
             <a
               href={contact.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="hero-link"
+              className="hero-link hero-link-github"
               aria-label="Sushant's GitHub profile"
             >
               <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -82,12 +79,11 @@ export default function Hero({ setActiveSection }) {
               </svg>
               GitHub
             </a>
-
             <a
               href={contact.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="hero-link"
+              className="hero-link hero-link-linkedin"
               aria-label="Sushant's LinkedIn profile"
             >
               <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -97,17 +93,34 @@ export default function Hero({ setActiveSection }) {
             </a>
           </div>
         </div>
-        <div className="hero-character-col" aria-hidden="true">
-          <div className="hero-character-wrap">
-            <DeveloperCharacter hoveredSection={null} mouseX={0} mouseY={0} />
-            <div className="char-glow-base" />
+
+        {/* ── Right: photo slot ── */}
+        <div className="hero-photo-col" aria-hidden="true">
+          <div className="hero-photo-wrap">
+            {!photoError ? (
+              <img
+                src="/photo.jpg"
+                alt="Sushant Mishra"
+                className="hero-photo"
+                onError={() => setPhotoError(true)}
+                loading="eager"
+              />
+            ) : (
+              /* Graceful fallback — initials avatar */
+              <div className="hero-photo hero-photo-fallback" aria-label="Sushant Mishra">
+                <span className="hero-photo-initials">SM</span>
+              </div>
+            )}
+            <div className="hero-photo-glow" />
+            <div className="hero-photo-ring" />
           </div>
         </div>
       </div>
+
       <button
         className="hero-scroll-cue"
-        onClick={() => scrollTo('about')}
-        aria-label="Scroll to About section"
+        onClick={() => scrollTo('projects')}
+        aria-label="Scroll to projects section"
       >
         <div className="scroll-mouse">
           <div className="scroll-wheel" />
