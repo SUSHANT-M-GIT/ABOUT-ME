@@ -1,196 +1,180 @@
 
+// ─── HERO ────────────────────────────────────────────────────────────────────
 export const hero = {
   name: 'SUSHANT',
   title: 'FULL-STACK DEVELOPER',
-  tagline: 'Final-year Computer Science & IT student building full-stack web applications, REST APIs and data-driven products.',
-  status: 'B.Tech CSE & IT · REVA University',
+  tagline:
+    "Full-stack developer who ships real products — from a QR-based campus events platform to an ML phishing detector with 97.75% accuracy.",
+  status: 'B.Tech CS & IT · REVA University',
 }
 
+// ─── ABOUT ───────────────────────────────────────────────────────────────────
 export const about = {
   intro:
-    "I'm a final-year Computer Science and Information Technology student at REVA University with hands-on experience in full-stack web development, REST APIs and databases.",
+    "I'm a final-year CS & IT student at REVA University who builds full-stack products and ML models end to end.",
   body: [
-    "I enjoy building practical web applications where the frontend, backend and data layer work together as one system. My experience includes React, TypeScript, Node.js, Express.js, MongoDB and REST API development.",
-    "During my web development internship at iStudio, I built and deployed a full-stack task management application and worked with API development, validation, debugging and documentation.",
-    "Outside coursework, I build projects to strengthen my understanding of real-world application development, deployment and software engineering practices.",
-  ],
-  whatIBuild: [
-    {
-      label: 'Full-Stack Applications',
-      icon: '⚡',
-      desc: 'React, TypeScript, Node.js, Express.js and MongoDB.',
-    },
-    {
-      label: 'REST APIs',
-      icon: '🔌',
-      desc: 'Designing, testing and debugging backend APIs and application workflows.',
-    },
-    {
-      label: 'Data & Databases',
-      icon: '🗄️',
-      desc: 'Working with SQL, MongoDB and data analysis tools.',
-    },
-    {
-      label: 'Deployment',
-      icon: '🚀',
-      desc: 'Deploying applications through platforms such as Vercel and Render.',
-    },
+    "My best work is Campus Event Finder, which replaced manual attendance sheets with QR check-in, and a phishing detector that beats standard baselines by 6+ accuracy points.",
+    "I'm looking for a full-stack or software developer role where I can ship real features.",
   ],
   education: {
     degree: 'B.Tech in Computer Science and Information Technology',
     university: 'REVA University',
     period: '2023 – 2027',
-    status: 'Final Year',
+    location: 'Bangalore, Karnataka',
+    // TODO: add CGPA once confirmed
   },
 }
 
+// ─── VIRTUAL INTERNSHIP ──────────────────────────────────────────────────────
 export const experience = [
   {
     id: 'istudio',
-    role: 'Web Development Intern',
+    role: 'iStudio — Virtual Internship (project-based, unpaid)',
     company: 'iStudio',
-    location: 'Pune, Maharashtra',
     period: 'Nov 2025 – Mar 2026',
-    type: 'Internship',
+    type: 'Virtual Internship',
     bullets: [
-      'Selected through the iStudio aptitude test (iCAT) and completed the web development internship program.',
-      'Built SmartTask Hub, a full-stack task management application using React, Node.js, Express.js and MongoDB Atlas.',
-      'Developed REST API endpoints for creating, viewing, editing and deleting tasks.',
-      'Implemented search, status/priority filters, sorting and due-date validation.',
-      'Added validation on both frontend and server-side logic.',
-      'Deployed the application on Vercel and completed the internship with a verified certificate.',
+      'Built TaskFlow, a full-stack task management app using React, Node.js, Express.js and MongoDB Atlas.',
+      'Developed a REST API (GET, POST, PUT, DELETE) with search, priority/status filters, sorting and due-date validation.',
+      'Deployed the application on Vercel; completed the internship with a verified certificate.',
     ],
     tech: ['React', 'Node.js', 'Express.js', 'MongoDB Atlas', 'REST APIs', 'Vercel'],
-    projectLink: 'smarttask-hub',
-    live: null,
+    projectLink: 'taskflow',
+    live: 'https://taskflow-tawny-gamma.vercel.app/',
   },
 ]
 
+// ─── PROJECTS ────────────────────────────────────────────────────────────────
 export const projects = [
+  // ── 1. Campus Event Finder (featured) ──────────────────────────────────────
   {
     id: 'campus-event-finder',
     title: 'CAMPUS EVENT FINDER',
     tags: ['FULL-STACK', 'MERN', 'REAL-TIME'],
     category: ['FULL-STACK'],
     tier: 'featured',
-    tagline: 'A full-stack campus event platform for students and organizers.',
+    screenshot: '/projects/campus-event-finder.svg',
+    tagline: 'Replaced manual attendance sheets with QR check-in for campus events.',
     description:
-      'A full-stack campus event platform where students can discover and register for events while organizers manage event creation, registration and attendance.',
-    problem:
-      'Campus events were managed through spreadsheets, WhatsApp groups and manual attendance — making registration and tracking error-prone and difficult to coordinate across multiple student organizations.',
-    solution:
-      'A web application with separate student and organizer flows. Students can browse events, register individually or as a team, receive QR-based confirmation and mark attendance via QR scan. Organizers get a dashboard to create events, track registrations, verify attendance and manage participant data.',
+      'A full-stack campus event platform with role-based access for 3 roles — students, working professionals, and organizers. Students discover and register for events; organizers create events, manage registrations, and scan QR attendance in real time.',
+    metrics: [
+      { label: '3 login methods', sub: 'Email OTP · Google · Microsoft' },
+      { label: 'QR attendance', sub: 'Replaced manual sheets' },
+      { label: 'Real-time', sub: 'Socket.IO notifications' },
+    ],
     features: [
-      'Student and organizer role-based flows',
-      'Event creation and management',
-      'Individual and team sign-up',
-      'Registration deadlines',
-      'QR-based registration confirmation',
-      'QR-based attendance verification',
-      'Live event updates using Socket.IO',
-      'Multi-role JWT authentication',
-      'REST API development and documentation',
+      '3 roles: students, working professionals, organizers',
+      'Email + OTP, Google OAuth, Microsoft OAuth sign-in',
+      '1-click organizer approval via email (SHA-256 token, 24h expiry)',
+      'Event creation with banner, venue, capacity, deadlines',
+      'QR-code ticket generated on registration, sent by email',
+      'Live in-browser QR scanner for attendance',
+      'Automated waitlists and real-time seat count (Socket.IO)',
+      'PDF attendance certificates generated server-side',
+      'Automated reminder emails; event feedback and Q&A comments',
+      'Tested API flows: login, registration, QR and attendance',
     ],
     implementation: {
-      frontend: 'React with TypeScript — component-based UI for both student and organizer views.',
-      backend: 'Node.js and Express.js — REST APIs for event, registration and attendance management.',
-      database: 'MongoDB — stores events, users, registrations and attendance records.',
-      realtime: 'Socket.IO — live updates for event changes and attendee counts.',
-      auth: 'JWT-based authentication with role separation (student / organizer / admin).',
-      qr: 'QR codes generated on registration and scanned at entry for attendance verification.',
+      frontend: 'React + TypeScript — separate student and organizer views.',
+      backend: 'Node.js + Express.js — REST APIs for events, registrations, attendance.',
+      database: 'MongoDB — events, users, registrations, attendance records.',
+      realtime: 'Socket.IO — live seat count and event notifications.',
+      auth: 'JWT + role middleware; Google and Microsoft OAuth credential flows.',
+      qr: 'QR codes generated on registration; scanned at entry for attendance.',
     },
-    challenges: [
-      'Designing the role-based access so student and organizer routes stay cleanly separated.',
-      'Keeping attendance state consistent in real time when multiple organizers scan simultaneously.',
-      'Handling team registrations where one member registers on behalf of a group, requiring linked records.',
-    ],
+    // TODO: Case study — one hard problem I solved (e.g. QR race condition, waitlist logic)
     tech: ['React', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'Socket.IO', 'JWT', 'REST APIs'],
     color: '#6C63FF',
     github: 'https://github.com/SUSHANT-M-GIT/CAMPUS-EVENT-FINDER-',
-    live: 'https://campus-event-finder-one.vercel.app/',
+    live: 'https://c-e-s.vercel.app',
+    flow: ['Sign Up', 'Browse Events', 'Register', 'QR Ticket', 'Attend', 'Scan QR', 'Certificate'],
+    adminFlow: ['Create Account', 'Fill Info', 'Select Organizer', 'Wait for Approval', 'Get Confirmation Email', 'Create Event', 'Manage Events'],
   },
+
+  // ── 2. LinkShield — Phishing URL Detector (featured) ───────────────────────
   {
-    id: 'smarttask-hub',
-    title: 'SMARTTASK HUB',
+    id: 'linkshield',
+    title: 'LINKSHIELD',
+    tags: ['MACHINE LEARNING', 'PYTHON', 'DEEP LEARNING'],
+    category: ['MACHINE LEARNING'],
+    tier: 'featured',
+    screenshot: '/projects/linkshield.svg',
+    tagline: 'CNN-BiLSTM phishing detector — 97.75% accuracy on 339,723 URLs.',
+    description:
+      'A deep learning phishing URL classifier that fuses a character-level CNN-BiLSTM with 12 structural URL features (length, subdomains, HTTPS, IP indicators). Trained on 339,723 cleaned URLs with a near-even phishing/legitimate split. Deployed as a Streamlit app that returns phishing/legitimate in real time for any URL.',
+    metrics: [
+      { label: '97.75%', sub: 'Test accuracy' },
+      { label: '0.9980', sub: 'ROC-AUC score' },
+      { label: '+6 pts', sub: 'vs XGBoost (91.59%)' },
+    ],
+    features: [
+      'Character-level CNN + Bidirectional LSTM hybrid architecture',
+      '12 structural URL features: length, subdomains, HTTPS, IP indicators',
+      '339,723 cleaned URLs with ~50/50 phishing/legitimate split',
+      '97.75% test accuracy; 0.9980 ROC-AUC',
+      'Outperforms Random Forest (91.27%) and XGBoost (91.59%) by 6+ points',
+      'Character-only ablation variant tested (97.64%) to validate fusion benefit',
+      'Deployed as a Streamlit app — real-time phishing/legitimate verdict for any URL',
+    ],
+    tech: ['Python', 'TensorFlow', 'Keras', 'Scikit-learn', 'XGBoost', 'Streamlit', 'Pandas', 'NumPy'],
+    color: '#0d9488',
+    // TODO: Add GitHub link once repo is public
+    github: null,
+    // TODO: Add Streamlit live demo link
+    live: null,
+    flow: ['Paste URL', 'Extract Features', 'CNN-BiLSTM', 'Feature Fusion', 'Verdict'],
+  },
+
+  // ── 3. TaskFlow (selected) ──────────────────────────────────────────────────
+  {
+    id: 'taskflow',
+    title: 'TASKFLOW',
     tags: ['FULL-STACK', 'INTERNSHIP', 'MERN'],
     category: ['FULL-STACK'],
     tier: 'selected',
-    tagline: 'Full-stack task management application built during my internship at iStudio.',
+    screenshot: '/projects/taskflow.svg',
+    tagline: 'Full-stack task manager built during a virtual internship at iStudio.',
     description:
-      'A full-stack task management application built during my web development internship at iStudio. Covers complete CRUD operations via REST APIs with search, filtering, sorting and validation.',
-    problem:
-      'Built as the primary deliverable for the iStudio web development internship. The goal was to design and ship a full-stack application demonstrating REST API development, frontend-backend integration and deployment.',
-    solution:
-      'A task management web app where users can create, view, update and delete tasks. Includes search, status and priority filtering, sorting, due-date validation and consistent validation on both frontend and server.',
+      'A full-stack task manager with a REST API (GET, POST, PUT, DELETE) persisting to MongoDB Atlas. Supports title search, filters by status and priority, sorting by date or priority, and rejects past due dates via validation. Responsive UI deployed on Vercel.',
+    metrics: [
+      { label: 'REST API', sub: 'GET POST PUT DELETE' },
+      { label: 'MongoDB Atlas', sub: 'Cloud persistence' },
+      { label: 'Vercel', sub: 'Live deployment' },
+    ],
     features: [
       'REST API — GET, POST, PUT, DELETE task operations',
       'Search tasks by title',
-      'Filter by status and priority',
+      'Filter by status (Pending, In Progress, Completed) and priority',
       'Sort by due date or priority',
-      'Due date validation',
-      'Frontend and server-side validation',
-      'Deployment on Vercel',
+      'Past due-date validation on both frontend and server',
+      'Responsive layout',
     ],
-    implementation: {
-      frontend: 'React — task list UI with search, filter and sort controls.',
-      backend: 'Node.js and Express.js — REST API endpoints for all task operations.',
-      database: 'MongoDB Atlas — cloud-hosted task storage.',
-      validation: 'Validation applied on both the React form layer and the Express route handlers.',
-    },
-    challenges: [
-      'Keeping filter, sort and search state in sync across the React UI without over-fetching.',
-      'Structuring the Express routes cleanly so validation middleware could be reused across create and update.',
-    ],
-    tech: ['React', 'Node.js', 'Express.js', 'MongoDB Atlas', 'REST APIs', 'Vercel'],
+    tech: ['React', 'Node.js', 'Express.js', 'MongoDB Atlas', 'REST APIs', 'Vite'],
     color: '#00D9FF',
+    // TODO: Add GitHub repo link
     github: null,
-    live: null,
+    live: 'https://taskflow-tawny-gamma.vercel.app/',
     internship: true,
+    flow: ['Add Task', 'Set Priority', 'Track Status', 'Search & Filter', 'Complete'],
   },
-  {
-    id: 'personal-portfolio',
-    title: 'PERSONAL PORTFOLIO',
-    tags: ['FRONTEND', 'REACT', 'THREE.JS'],
-    category: ['FULL-STACK'],
-    tier: 'selected',
-    tagline: 'This portfolio — built with React, Three.js, Framer Motion and GSAP.',
-    description:
-      'Personal portfolio website built to showcase projects, experience and skills. Features a 3D particle scene, smooth scroll animations and responsive layout.',
-    features: [
-      'Interactive 3D scene with Three.js and React Three Fiber',
-      'Smooth animations with Framer Motion and GSAP',
-      'Responsive layout — works on mobile and desktop',
-      'Custom cursor with touch fallback',
-      'Lazy-loaded sections for performance',
-      'Deployed on Vercel with GitHub CI/CD',
-    ],
-    tech: ['React', 'Three.js', 'Framer Motion', 'GSAP', 'Vite', 'Vercel'],
-    color: '#FF6B6B',
-    github: 'https://github.com/SUSHANT-M-GIT/ABOUT-ME',
-    live: 'https://about-me-rho-one.vercel.app/',
-  },
+
+  // ── 4. Cricket Score Predictor (other) ─────────────────────────────────────
   {
     id: 'cricket-score-predictor',
     title: 'CRICKET SCORE PREDICTION',
-    tags: ['MACHINE LEARNING', 'PYTHON', 'DATA'],
-    category: ['MACHINE LEARNING', 'DATA'],
+    tags: ['MACHINE LEARNING', 'PYTHON'],
+    category: ['MACHINE LEARNING'],
     tier: 'other',
     tagline: 'ML model predicting T20 final scores from live match conditions.',
     description:
-      'A machine-learning model that predicts the final score of a batting team during an ongoing T20 cricket match using current match conditions such as overs completed, wickets fallen and current run rate.',
-    features: [
-      'Match-condition based prediction',
-      'Data preprocessing and feature engineering',
-      'Model training and evaluation pipeline',
-      'Predicted vs actual analysis',
-      'Feature importance visualization',
-      'Flask API for serving predictions',
-    ],
-    tech: ['Python', 'Machine Learning', 'Pandas', 'Scikit-learn', 'Flask', 'Data Processing'],
+      'Predicts the final score of a batting team during an ongoing T20 match using live conditions: overs completed, wickets fallen and current run rate.',
+    tech: ['Python', 'Pandas', 'Scikit-learn', 'Flask'],
     color: '#00D9FF',
     github: 'https://github.com/SUSHANT-M-GIT/cricket-score-predictor',
     live: null,
   },
+
+  // ── 5. Credit Card Dashboard (other) ───────────────────────────────────────
   {
     id: 'credit-card-dashboard',
     title: 'CREDIT CARD FINANCIAL DASHBOARD',
@@ -199,16 +183,7 @@ export const projects = [
     tier: 'other',
     tagline: 'Interactive Power BI dashboard for customer spending analysis.',
     description:
-      'An interactive financial analytics dashboard designed to understand customer spending behaviour and credit-card usage patterns across different demographics, card types and spending categories.',
-    features: [
-      'Revenue and card type breakdown',
-      'Spending category analysis',
-      'Quarterly trend visualization',
-      'Customer demographics and spending groups',
-      'Credit utilization analysis',
-      'DAX measures and Power Query transforms',
-      'Data cleaning and transformation pipeline',
-    ],
+      'An interactive financial analytics dashboard for understanding customer spending behaviour and credit-card usage patterns across demographics, card types and spending categories.',
     tech: ['Power BI', 'PostgreSQL', 'DAX', 'Power Query'],
     color: '#FF6B6B',
     github: 'https://github.com/SUSHANT-M-GIT/Credit_Card_financial_dashboard',
@@ -216,63 +191,53 @@ export const projects = [
   },
 ]
 
+// ─── SKILLS ──────────────────────────────────────────────────────────────────
+// Matches resume exactly. Java, CI/CD, Computer Networks, System Design, Design Patterns removed.
 export const skills = {
-  core: [
-    { name: 'React.js',    icon: '⚛️', color: '#61DAFB' },
-    { name: 'TypeScript',  icon: 'TS', color: '#3178C6' },
-    { name: 'Node.js',     icon: '🟢', color: '#339933' },
-    { name: 'Express.js',  icon: '🚂', color: '#888888' },
-    { name: 'MongoDB',     icon: '🍃', color: '#47A248' },
-    { name: 'REST APIs',   icon: '🔌', color: '#FF6B6B' },
-  ],
   languages: [
-    { name: 'Python',      icon: '🐍', color: '#3776AB' },
-    { name: 'JavaScript',  icon: 'JS', color: '#F7DF1E' },
-    { name: 'TypeScript',  icon: 'TS', color: '#3178C6' },
-    { name: 'Java',        icon: '☕', color: '#ED8B00' },
-    { name: 'C++',         icon: '⚙️', color: '#00599C' },
-    { name: 'SQL',         icon: '🗃️', color: '#336791' },
+    { name: 'Python',      color: '#3776AB' },
+    { name: 'SQL',         color: '#336791' },
+    { name: 'JavaScript',  color: '#F7DF1E' },
+    { name: 'TypeScript',  color: '#3178C6' },
+    { name: 'C++',         color: '#00599C' },
   ],
   frontend: [
-    { name: 'React.js',        icon: '⚛️', color: '#61DAFB' },
-    { name: 'HTML5',           icon: '🌐', color: '#E34F26' },
-    { name: 'CSS3',            icon: '🎨', color: '#1572B6' },
-    { name: 'Responsive Design', icon: '📱', color: '#6C63FF' },
+    { name: 'React.js',    color: '#61DAFB' },
+    { name: 'HTML5 & CSS3',color: '#E34F26' },
   ],
   backend: [
-    { name: 'Node.js',         icon: '🟢', color: '#339933' },
-    { name: 'Express.js',      icon: '🚂', color: '#888888' },
-    { name: 'REST APIs',       icon: '🔌', color: '#FF6B6B' },
-    { name: 'Socket.IO',       icon: '⚡', color: '#010101' },
-    { name: 'JWT Auth',        icon: '🔐', color: '#6C63FF' },
+    { name: 'Node.js & Express.js', color: '#339933' },
+    { name: 'REST API Design',      color: '#FF6B6B' },
+    { name: 'JWT Authentication',   color: '#d63aff' },
+    { name: 'Socket.IO',            color: '#6C63FF' },
   ],
   databases: [
-    { name: 'MongoDB',         icon: '🍃', color: '#47A248' },
-    { name: 'MySQL',           icon: '🐬', color: '#4479A1' },
-    { name: 'PostgreSQL',      icon: '🐘', color: '#336791' },
+    { name: 'MongoDB',    color: '#47A248' },
+    { name: 'MySQL',      color: '#4479A1' },
+    { name: 'PostgreSQL', color: '#336791' },
   ],
-  data: [
-    { name: 'Pandas',          icon: '🐼', color: '#150458' },
-    { name: 'NumPy',           icon: '🔢', color: '#013243' },
-    { name: 'Matplotlib',      icon: '📈', color: '#11557c' },
-    { name: 'Power BI',        icon: '📊', color: '#F2C811' },
+  dataML: [
+    { name: 'Pandas & NumPy',    color: '#150458' },
+    { name: 'Matplotlib',        color: '#11557c' },
+    { name: 'Scikit-learn',      color: '#F7931E' },
+    { name: 'TensorFlow/Keras',  color: '#FF6F00' },
+    { name: 'XGBoost',           color: '#337AB7' },
+    { name: 'Streamlit',         color: '#FF4B4B' },
+    { name: 'Power BI',          color: '#F2C811' },
+    { name: 'DAX',               color: '#F2C811' },
   ],
-  tools: [
-    { name: 'Git',             icon: '🌿', color: '#F05032' },
-    { name: 'GitHub',          icon: '🐙', color: '#ffffff' },
-    { name: 'Vercel',          icon: '▲',  color: '#ffffff' },
-    { name: 'Render',          icon: '🟣', color: '#6C63FF' },
-    { name: 'CI/CD',           icon: '🔄', color: '#6C63FF' },
+  cloudDeploy: [
+    { name: 'Git & GitHub',    color: '#F05032' },
+    { name: 'Vercel & Render', color: '#6C63FF' },
   ],
-  cs: [
-    { name: 'DSA',                    icon: '🌲', color: '#6C63FF' },
-    { name: 'OOP',                    icon: '🧱', color: '#00D9FF' },
-    { name: 'Design Patterns',        icon: '🗂️', color: '#FF6B6B' },
-    { name: 'Computer Networks',      icon: '🌐', color: '#6C63FF' },
-    { name: 'System Design Basics',   icon: '🏗️', color: '#00D9FF' },
+  core: [
+    { name: 'DSA',              color: '#6C63FF' },
+    { name: 'OOP',              color: '#00D9FF' },
+    { name: 'Problem-Solving & Debugging', color: '#FF6B6B' },
   ],
 }
 
+// ─── EDUCATION ───────────────────────────────────────────────────────────────
 export const education = [
   {
     id: 'reva',
@@ -280,11 +245,12 @@ export const education = [
     degree: 'B.Tech — Computer Science & Information Technology',
     period: '2023 – 2027',
     location: 'Bangalore, Karnataka',
+    // TODO: Add CGPA once confirmed
     primary: true,
   },
   {
     id: 'kv',
-    institution: 'KV AFS Avadi',
+    institution: 'KV AFS Avadi, Chennai',
     degree: 'Class XII & X — CBSE',
     period: null,
     location: null,
@@ -292,6 +258,7 @@ export const education = [
   },
 ]
 
+// ─── CERTIFICATIONS ──────────────────────────────────────────────────────────
 export const certifications = [
   {
     title: 'Introduction to Cybersecurity',
@@ -300,7 +267,7 @@ export const certifications = [
   },
   {
     title: 'Leadership Principles for Software Engineers',
-    issuer: 'Coursera',
+    issuer: 'Advancing Women in Tech via Coursera',
     date: 'Sep 2026',
   },
   {
@@ -310,15 +277,15 @@ export const certifications = [
   },
   {
     title: 'AI & ML Masterclass',
-    issuer: 'Eureka Association × REVA University',
+    issuer: 'Eureka Association in collaboration with REVA University',
     date: '2025',
   },
 ]
 
+// ─── CONTACT ─────────────────────────────────────────────────────────────────
 export const contact = {
   heading: "LET'S BUILD SOMETHING",
-  subheading:
-    "I'm currently looking for software development opportunities where I can contribute to real products, strengthen my engineering skills and continue learning through practical work.",
+  subheading: 'Open to full-stack and software developer roles.',
   email: 'mishrasushant029@gmail.com',
   location: 'Bangalore, India',
   github: 'https://github.com/SUSHANT-M-GIT',
