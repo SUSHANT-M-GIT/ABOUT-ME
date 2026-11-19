@@ -1,42 +1,60 @@
-﻿import React, { useState, useEffect } from 'react'
+﻿import React, { useState, useEffect, useCallback } from 'react'
 import './Navigation.css'
 
 const navItems = [
-  { id: 'hero',       label: 'Home'       },
-  { id: 'about',      label: 'About'      },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects',   label: 'Projects'   },
-  { id: 'skills',     label: 'Skills'     },
-  { id: 'contact',    label: 'Contact'    },
+  { id: 'hero',        label: 'Home'           },
+  { id: 'projects',    label: 'Projects'       },
+  { id: 'skills',      label: 'Skills'         },
+  { id: 'about',       label: 'About'          },
+  { id: 'experience',  label: 'Internship'     },
+  { id: 'educerts',    label: 'Education'      },
+  { id: 'contact',     label: 'Contact'        },
 ]
 
 export default function Navigation({ activeSection, setActiveSection }) {
   const [scrolled,  setScrolled]  = useState(false)
   const [menuOpen,  setMenuOpen]  = useState(false)
 
+  // Scroll indicator
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  // Scroll-spy — fixed: rootMargin keeps tall sections from never firing,
+  // runs after a tick so lazy section children have mounted.
   useEffect(() => {
-    const sections = document.querySelectorAll('section[id]')
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActiveSection(e.target.id)
-        })
-      },
-      { threshold: 0.3 }
-    )
-    sections.forEach(s => observer.observe(s))
-    return () => observer.disconnect()
+    let observer
+
+    const setup = () => {
+      const sections = document.querySelectorAll('section[id]')
+      if (!sections.length) return
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) setActiveSection(e.target.id)
+          })
+        },
+        { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
+      )
+      sections.forEach(s => observer.observe(s))
+    }
+
+    // Small delay so React has flushed all section children
+    const t = setTimeout(setup, 100)
+    return () => {
+      clearTimeout(t)
+      observer?.disconnect()
+    }
   }, [setActiveSection])
 
-  const scrollTo = (id) => {
+  const scrollTo = useCallback((id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     setMenuOpen(false)
-  }
+  }, [])
+
   useEffect(() => {
     if (!menuOpen) return
     const onKey = (e) => { if (e.key === 'Escape') setMenuOpen(false) }
@@ -50,6 +68,7 @@ export default function Navigation({ activeSection, setActiveSection }) {
       aria-label="Main navigation"
     >
       <a href="#main-content" className="skip-link">Skip to main content</a>
+
       <button
         className="nav-logo"
         onClick={() => scrollTo('hero')}
@@ -58,6 +77,7 @@ export default function Navigation({ activeSection, setActiveSection }) {
         <span className="nav-logo-letter">S</span>
         <span className="nav-logo-dot" aria-hidden="true" />
       </button>
+
       <ul className="nav-links" role="list">
         {navItems.map(item => (
           <li key={item.id}>
@@ -71,6 +91,7 @@ export default function Navigation({ activeSection, setActiveSection }) {
           </li>
         ))}
       </ul>
+
       <a
         href="/Sushant_Resume.pdf"
         download="Sushant_Resume.pdf"
@@ -82,6 +103,7 @@ export default function Navigation({ activeSection, setActiveSection }) {
         </svg>
         Resume
       </a>
+
       <button
         className={`nav-hamburger ${menuOpen ? 'nav-hamburger-open' : ''}`}
         onClick={() => setMenuOpen(o => !o)}
@@ -91,6 +113,7 @@ export default function Navigation({ activeSection, setActiveSection }) {
       >
         <span /><span /><span />
       </button>
+
       {menuOpen && (
         <div
           id="mobile-menu"
@@ -109,7 +132,6 @@ export default function Navigation({ activeSection, setActiveSection }) {
               {item.label}
             </button>
           ))}
-
           <a
             href="/Sushant_Resume.pdf"
             download="Sushant_Resume.pdf"
