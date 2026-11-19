@@ -70,6 +70,12 @@
   margin-top: 0.15rem;
 }
 
+.edu-location {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
 .about-resume-btn {
   display: inline-flex;
   align-items: center;

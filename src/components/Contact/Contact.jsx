@@ -15,7 +15,7 @@ export default function Contact() {
     >
       <div className="section-label">
         <span className="section-label-line" />
-        <span className="section-label-text">08 · CONTACT</span>
+        <span className="section-label-text">CONTACT</span>
         <span className="section-label-line" />
       </div>
 
@@ -26,10 +26,9 @@ export default function Contact() {
 
         <p className="contact-sub">{contact.subheading}</p>
         <div className="contact-links" role="list">
-
           <a
             href={`mailto:${contact.email}`}
-            className="contact-link"
+            className="contact-link contact-link--say-hello"
             aria-label={`Send email to ${contact.email}`}
             role="listitem"
           >
@@ -40,7 +39,7 @@ export default function Contact() {
               </svg>
             </span>
             <div>
-              <p className="contact-link-label">Email</p>
+              <p className="contact-link-label">Say hello</p>
               <p className="contact-link-value">{contact.email}</p>
             </div>
             <span className="contact-link-arrow" aria-hidden="true">↗</span>

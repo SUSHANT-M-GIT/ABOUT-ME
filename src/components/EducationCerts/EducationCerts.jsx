@@ -5,7 +5,7 @@ import './EducationCerts.css'
 
 export default function EducationCerts() {
   const sectionRef = useRef(null)
-  const inView = useInView(sectionRef, { threshold: 0.1 })
+  const inView = useInView(sectionRef)
 
   return (
     <section
@@ -15,7 +15,7 @@ export default function EducationCerts() {
     >
       <div className="section-label">
         <span className="section-label-line" />
-        <span className="section-label-text">07 · EDUCATION &amp; CERTIFICATIONS</span>
+        <span className="section-label-text">EDUCATION &amp; CERTIFICATIONS</span>
         <span className="section-label-line" />
       </div>
 

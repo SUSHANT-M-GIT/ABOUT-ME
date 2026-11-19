@@ -22,7 +22,7 @@ export default function Projects() {
     >
       <div className="section-label">
         <span className="section-label-line" />
-        <span className="section-label-text">04 · PROJECTS</span>
+        <span className="section-label-text">PROJECTS</span>
         <span className="section-label-line" />
       </div>
 

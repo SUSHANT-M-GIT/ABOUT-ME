@@ -2,38 +2,40 @@ import React, { useRef, useEffect, useState } from 'react'
 import './ProjectCard.css'
 
 const TECH_COLORS = {
-  'React':        '#61DAFB',
-  'TypeScript':   '#3178C6',
-  'Node.js':      '#339933',
-  'Express.js':   '#888888',
-  'MongoDB':      '#47A248',
-  'Socket.IO':    '#6C63FF',
-  'JWT':          '#d63aff',
-  'REST APIs':    '#FF6B6B',
-  'Vite':         '#646CFF',
-  'Python':       '#3776AB',
-  'Pandas':       '#150458',
-  'Scikit-learn': '#F7931E',
-  'Flask':        '#aaaaaa',
-  'Power BI':     '#F2C811',
-  'PostgreSQL':   '#336791',
-  'DAX':          '#F2C811',
-  'Three.js':     '#61DAFB',
-  'Framer Motion':'#e040fb',
-  'GSAP':         '#88CE02',
-  'Vercel':       '#aaaaaa',
-  'MongoDB Atlas':'#47A248',
+  'React':              '#61DAFB',
+  'TypeScript':         '#3178C6',
+  'Node.js':            '#339933',
+  'Express.js':         '#888888',
+  'MongoDB':            '#47A248',
+  'MongoDB Atlas':      '#47A248',
+  'Socket.IO':          '#6C63FF',
+  'JWT':                '#d63aff',
+  'REST APIs':          '#FF6B6B',
+  'REST API Design':    '#FF6B6B',
+  'Vite':               '#646CFF',
+  'Python':             '#3776AB',
+  'TensorFlow':         '#FF6F00',
+  'Keras':              '#FF6F00',
+  'Scikit-learn':       '#F7931E',
+  'XGBoost':            '#337AB7',
+  'Streamlit':          '#FF4B4B',
+  'Pandas':             '#150458',
+  'NumPy':              '#013243',
+  'Flask':              '#aaaaaa',
+  'Power BI':           '#F2C811',
+  'PostgreSQL':         '#336791',
+  'DAX':                '#F2C811',
 }
 
 export default function ProjectCard({ project, index, variant, onClick }) {
   const cardRef = useRef(null)
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
+  const [imgError, setImgError] = useState(false)
 
   useEffect(() => {
     if (variant === 'other') return
     const card = cardRef.current
     if (!card) return
-
     const move = (e) => {
       const r = card.getBoundingClientRect()
       const dx = (e.clientX - r.left - r.width / 2) / (r.width / 2)
@@ -41,7 +43,6 @@ export default function ProjectCard({ project, index, variant, onClick }) {
       setTilt({ x: dy * -4, y: dx * 4 })
     }
     const leave = () => setTilt({ x: 0, y: 0 })
-
     card.addEventListener('mousemove', move)
     card.addEventListener('mouseleave', leave)
     return () => {
@@ -59,10 +60,10 @@ export default function ProjectCard({ project, index, variant, onClick }) {
       ref={cardRef}
       className={`project-card project-card--${variant}`}
       style={{
-        '--delay':     `${index * 0.08}s`,
-        '--accent':    project.color,
-        '--tilt-x':    `${tilt.x}deg`,
-        '--tilt-y':    `${tilt.y}deg`,
+        '--delay':  `${index * 0.08}s`,
+        '--accent': project.color,
+        '--tilt-x': `${tilt.x}deg`,
+        '--tilt-y': `${tilt.y}deg`,
       }}
       onClick={onClick}
       role="button"
@@ -71,9 +72,23 @@ export default function ProjectCard({ project, index, variant, onClick }) {
       aria-label={`View ${project.title} project details`}
     >
       <div className="card-inner">
+        {/* Screenshot */}
+        {!isOther && project.screenshot && !imgError && (
+          <div className="card-screenshot-wrap" aria-hidden="true">
+            <img
+              src={project.screenshot}
+              alt={`${project.title} screenshot`}
+              className="card-screenshot"
+              onError={() => setImgError(true)}
+              loading="lazy"
+            />
+            <div className="card-screenshot-overlay" />
+          </div>
+        )}
+
         <div className="card-meta-row">
           {project.internship && (
-            <span className="card-internship-badge">Internship Project</span>
+            <span className="card-internship-badge">Virtual Internship</span>
           )}
           <div className="card-tags">
             {project.tags.slice(0, 2).map(t => (
@@ -81,11 +96,26 @@ export default function ProjectCard({ project, index, variant, onClick }) {
             ))}
           </div>
         </div>
+
         <h3 className="card-title">{project.title}</h3>
         <p className="card-tagline">{project.tagline}</p>
+
+        {/* Metric chips — featured and selected cards only */}
+        {!isOther && project.metrics && (
+          <div className="card-metrics" aria-label="Key metrics">
+            {project.metrics.map(m => (
+              <div key={m.label} className="metric-chip">
+                <span className="metric-label">{m.label}</span>
+                {m.sub && <span className="metric-sub">{m.sub}</span>}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Feature highlights — featured only */}
         {isFeatured && project.features && (
           <ul className="card-highlights" aria-label="Key features">
-            {project.features.slice(0, 4).map(f => (
+            {project.features.slice(0, 3).map(f => (
               <li key={f} className="card-highlight-item">
                 <span className="card-highlight-dot" aria-hidden="true" />
                 {f}
@@ -93,6 +123,7 @@ export default function ProjectCard({ project, index, variant, onClick }) {
             ))}
           </ul>
         )}
+
         <div className="card-tech" aria-label="Technologies used">
           {project.tech.slice(0, maxTech).map(t => (
             <span
@@ -107,6 +138,7 @@ export default function ProjectCard({ project, index, variant, onClick }) {
             <span className="tech-badge tech-more">+{project.tech.length - maxTech}</span>
           )}
         </div>
+
         <div className="card-footer">
           <span className="card-cta" aria-hidden="true">
             {isFeatured ? 'View Case Study' : 'View Details'}
@@ -114,7 +146,6 @@ export default function ProjectCard({ project, index, variant, onClick }) {
               <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </span>
-
           <div className="card-links" onClick={e => e.stopPropagation()}>
             {project.github && (
               <a
@@ -140,7 +171,6 @@ export default function ProjectCard({ project, index, variant, onClick }) {
             )}
           </div>
         </div>
-
       </div>
     </article>
   )

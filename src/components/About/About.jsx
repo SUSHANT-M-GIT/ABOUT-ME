@@ -5,7 +5,7 @@ import './About.css'
 
 export default function About() {
   const sectionRef = useRef(null)
-  const inView = useInView(sectionRef, { threshold: 0.12 })
+  const inView = useInView(sectionRef)
 
   return (
     <section
@@ -15,7 +15,7 @@ export default function About() {
     >
       <div className="section-label">
         <span className="section-label-line" />
-        <span className="section-label-text">02 · ABOUT</span>
+        <span className="section-label-text">ABOUT</span>
         <span className="section-label-line" />
       </div>
 
@@ -27,9 +27,9 @@ export default function About() {
               <p className="edu-degree">{about.education.degree}</p>
               <p className="edu-uni">{about.education.university}</p>
               <p className="edu-period">{about.education.period}</p>
+              <p className="edu-location">{about.education.location}</p>
             </div>
           </div>
-
           <a
             href="/Sushant_Resume.pdf"
             download="Sushant_Resume.pdf"
@@ -42,11 +42,10 @@ export default function About() {
             Download Resume
           </a>
         </div>
+
         <div className="about-content">
           <h2 className="section-heading" id="about-heading">ABOUT ME</h2>
-
           <p className="about-intro">{about.intro}</p>
-
           {about.body.map((para, i) => (
             <p
               key={i}
@@ -56,25 +55,6 @@ export default function About() {
               {para}
             </p>
           ))}
-          <div className="about-build-section">
-            <h3 className="about-build-heading">What I build</h3>
-            <div className="about-build-grid" role="list">
-              {about.whatIBuild.map((item, i) => (
-                <div
-                  key={item.label}
-                  className="build-card glass-card"
-                  style={{ '--delay': `${i * 0.08 + 0.25}s` }}
-                  role="listitem"
-                >
-                  <span className="build-icon" aria-hidden="true">{item.icon}</span>
-                  <div>
-                    <p className="build-label">{item.label}</p>
-                    <p className="build-desc">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
